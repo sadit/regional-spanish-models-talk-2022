@@ -70,7 +70,7 @@ Todo lo anterior puede regionalizarse, ya que un mismo lenguaje puede usarse de 
 La mayoría de los recursos se encuentran para el inglés, y los recursos en español suelen encontrarse en una forma _aglutinada_. \col{blue}{Nuestra **hipótesis** es que para tareas donde haya una fuerte carga regional o el interés sea regional, el uso de recursos regionalizados es provechoso.}
 
 @@colbox-blue
-Entender las variaciones del lenguaje en las redes sociales es primordial ya que los mensajes suelen ser informales, y es común que los usuarios solo quieran ser leídos por su _circulo_ de personas cercanas.
+Entender las variaciones del lenguaje en las redes sociales es primordial ya que los mensajes suelen ser informales, y es común que los usuarios solo quieran ser leídos por su _círculo_ de personas cercanas.
 @@
 
 

@@ -42,7 +42,19 @@ Usando un vocabulario reducido que aparece en al menos 10 regiones, i.e., de tam
 La gráfica de los $k$ vecinos se aproxima mediante el uso del paquete [https://github.com/sadit/SimilaritySearch.jl]() que de otra forma es una operación muy costosa. Las reducciones de dimensión se realizaron con [https://github.com/sadit/UMAP.jl]() que esta integrado con `SimilaritySearch.jl`.
 @@
 
+
+### Ejemplos de $k$ vecinos
+[Notebook ejemplos](https://github.com/sadit/RegionalSpanish/blob/main/notebooks/explore-region-similarities.ipynb)
+
+```julia:tablas-ejemplos
+
+println(read("ejemplos-palabras-knn.md", String))
+```
+
+\textoutput{tablas-ejemplos}
+
 ## Búsqueda por similitud
+
 
 [SimilaritySearch.jl](https://github.com/sadit/SimilaritySearch.jl) es un paquete para Julia que resuelve de manera eficiente búsquedas de vecinos cercanos usando una noción de distancia.
 

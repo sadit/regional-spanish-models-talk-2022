@@ -47,7 +47,7 @@ Se colectaron mensajes georeferenciados de 2016 a 2019 usando el API de _stream_
 ## Preprocesamiento
 
 @@definition
-Solo se considerá Twitter como fuente de datos. Los mensajes con URLs se descartan, lo mismo se hace con retweets y mensajes generados por aplicaciones (e.g., fourth square). Mensajes cortos también se descartan (al menos se debe tener 7 tokens).
+Solo se considera Twitter como fuente de datos. Los mensajes con URLs se descartan, lo mismo se hace con retweets y mensajes generados por aplicaciones (e.g., fourth square). Mensajes cortos también se descartan (al menos se debe tener 7 tokens).
 
 @@
 Los mensajes restantes se procesan como sigue:
