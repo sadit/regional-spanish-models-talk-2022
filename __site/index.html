@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  <link href="/regional-spanish-models-talk-2022/css/franklin.css" rel="stylesheet">
+<link href="/regional-spanish-models-talk-2022/css/vela.css" rel="stylesheet">
+<link href="/regional-spanish-models-talk-2022/css/mystyle.css" rel="stylesheet">
+
+<script src="/regional-spanish-models-talk-2022/libs/vela/jquery.min.js"></script>
+
+<link rel="icon" href="/regional-spanish-models-talk-2022/assets/favicon.png">
+
+
+  <title>Regional Spanish Models</title>
+</head>
+<body>
+<div class="main-nav slideout-menu slideout-menu-left" id="menu">
+  <div class="flex-container">
+    <span class="sidebar-brand">
+      <h3 style='font-size: 20px'>Regional Spanish</h3>
+    </span>
+  </div> <!-- class="flex-container" -->
+
+  <nav class="sidebar-nav">
+    <ul class="metismenu" id="metismenu" >
+      <li><a href="/regional-spanish-models-talk-2022/index.html">Introducción</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/corpora/">Corpus</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/recursos/">Recursos</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/emojis15/">Emojis-15</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/analisis/">Análisis</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/conclusiones/">Conclusiones y trabajo a futuro</a></li>
+    </ul>
+  </nav>
+</div> <!-- main nav menu -->
+
+<main id="panel" class="slidout-panel slideout-panel-left">
+  <div class="toggle-button hamburger hamburger--spin">
+    <div class="hamburger-box">
+      <div class="hamburger-inner"></div>
+    </div>
+  </div>
+  <h1 class="page title">Spanish language variations in Twitter</h1>
+  <hr>
+
+
+
+<!-- Content appended here -->
+<div class="franklin-content"><h1 id="variaciones_del_español_en_redes_sociales_twitter"><a href="#variaciones_del_español_en_redes_sociales_twitter" class="header-anchor">Variaciones del español en redes sociales &#40;Twitter&#41;</a></h1>
+<p><strong>Eric S. Téllez</strong> – CONACyT - INFOTEC <a href="">email:eric.tellez@ieee.org</a></p>
+<p>Este es un trabajo en conjunto con <em>Daniela Moctezuma, Sabino Miranda, Mario Graff, y Guillermo Ruiz</em>.</p>
+<ul>
+<li><p>Sitio web: <a href="">https://ingeotec.github.io/regional-spanish-models/</a></p>
+</li>
+<li><p>Repositorio: <a href="">https://github.com/sadit/RegionalSpanish</a></p>
+</li>
+<li><p>A large scale lexical and semantic analysis of Spanish language variations in Twitter: <a href="https://arxiv.org/abs/2110.06128">ArXiv</a>.</p>
+</li>
+</ul>
+<h2 id="sobre_esta_charla"><a href="#sobre_esta_charla" class="header-anchor">Sobre esta charla</a></h2>
+<div class="contribution">En esta charla se muestran nuestros esfuerzos para medir la similitud entre variaciones del lenguaje en la red social Twitter, así como se presentan una serie de recursos regionalizados que se espera sean de utilidad para la creación de modelos de clasificación de texto para tareas cuyo enfoque sea regional.</div>
+<h2 id="problema_1"><a href="#problema_1" class="header-anchor">Problema 1</a></h2>
+<p>Entender el lenguaje y los mensajes escritos en redes sociales.</p>
+<div class="definition"><h3 id="tareas_relacionadas"><a href="#tareas_relacionadas" class="header-anchor">Tareas relacionadas</a></h3>
+<ul>
+<li><p><strong>Minería de opinión</strong> &#40;análisis de sentimiento&#41;</p>
+<ul>
+<li><p><span style="color: rgb(0, 0, 255);">positivo :) </span></p>
+</li>
+<li><p><span style="color: rgb(130, 130, 130);">neutro :) </span></p>
+</li>
+<li><p><span style="color: rgb(255, 0, 0);">negativo :( </span></p>
+</li>
+</ul>
+</li>
+<li><p><strong>Análisis de tópicos</strong></p>
+</li>
+<li><p><strong>Carga emotiva de un mensaje</strong>: <em>enojo, anticipación, disgusto, miedo, gozo, tristeza, sorpresa, confianza</em>.</p>
+</li>
+<li><p><strong>Identificación de humor</strong></p>
+</li>
+<li><p><strong>Identificación de lenguaje de odio</strong></p>
+</li>
+<li><p>Etc.</p>
+</li>
+</ul></div>
+<h2 id="problema_2"><a href="#problema_2" class="header-anchor">Problema 2</a></h2>
+<p>Perfilado de usuarios por medio de sus mensajes escritos</p>
+<div class="definition"><ul>
+<li><p><strong>Predicción indicadores socio-demográficos de los usuarios</strong>: edad, sexo, lugar de procedencia, ocupación, ...</p>
+</li>
+<li><p><strong>Identificación de autoría</strong>: ¿quiénes escriben?, ¿cómo escriben?, ¿sobre qué escriben?</p>
+</li>
+<li><p><strong>Entender como se comportan usuarios</strong>, ¿qué desean?, ¿por qué?</p>
+</li>
+<li><p><strong>Medición de violencia en redes sociales</strong>: discurso de odio, xenofobia, racismo, misoginia, agresividad, cyberbulling...</p>
+</li>
+<li><p><strong>Identificación de posibles trastornos mentales</strong>: ansiedad, depresión, adicciones, ...</p>
+</li>
+<li><p>Aplicaciones a seguridad, salud, políticas públicas, economía y finanzas, ...</p>
+</li>
+</ul></div>
+<h2 id="retos"><a href="#retos" class="header-anchor">Retos</a></h2>
+<div class="definition"><ul>
+<li><p>Escritos informales: muchos errores, onomatopeya, importación de términos, variaciones regionales, emojis, entre muchos otros.</p>
+</li>
+<li><p>Contextos cortos, conocimiento del mundo.</p>
+</li>
+<li><p>Negación, sarcasmo, ironía, humor.</p>
+</li>
+<li><p>Semántica.</p>
+</li>
+<li><p>Recursos lingüísticos reducidos para lenguajes diferentes del inglés.</p>
+</li>
+<li><p>Multimedios.</p>
+</li>
+</ul></div>
+<br/>
+<div class="warn">Todo lo anterior puede regionalizarse, ya que un mismo lenguaje puede usarse de manera diferente en diferentes regiones.</div>
+<p>La mayoría de los recursos se encuentran para el inglés, y los recursos en español suelen encontrarse en una forma <em>aglutinada</em>. <span style="color: blue">Nuestra <strong>hipótesis</strong> es que para tareas donde haya una fuerte carga regional o el interés sea regional, el uso de recursos regionalizados es provechoso.</span></p>
+<div class="colbox-blue">Entender las variaciones del lenguaje en las redes sociales es primordial ya que los mensajes suelen ser informales, y es común que los usuarios solo quieran ser leídos por su <em>circulo</em> de personas cercanas.</div>
+<h2 id="cómo_se_ven_los_mensajes_en_diferentes_regiones"><a href="#cómo_se_ven_los_mensajes_en_diferentes_regiones" class="header-anchor">¿Cómo se ven los mensajes en diferentes regiones?</a></h2>
+<h3 id="españa"><a href="#españa" class="header-anchor">España</a></h3>
+<div class="example"><ul>
+<li><p>me dais ascooooikiiikioooooooooooooooooooooooooo</p>
+</li>
+<li><p>kina ñefla</p>
+</li>
+<li><p>ns cmo s exribe</p>
+</li>
+<li><p>o indeciso, nse ya x dnde cogerte colega</p>
+</li>
+<li><p>q os follennjajabya quisieran</p>
+</li>
+<li><p>en el metro q voy esta potando uno</p>
+</li>
+<li><p>_USR 😂😭💔☹️😰 pero por qué churra</p>
+</li>
+<li><p>m acaban d decir q soy un traidor a la patria</p>
+</li>
+</ul></div>
+<h3 id="argentina"><a href="#argentina" class="header-anchor">Argentina</a></h3>
+<div class="example"><ul>
+<li><p>pofr suerxte m8ís amigo mo son psicópatassa</p>
+</li>
+<li><p>pal pinnngooo</p>
+</li>
+<li><p>dios mio no tengo fuerzas😭</p>
+</li>
+<li><p>_USR estos rompen todo&#33; y la esposa del chorro me tiró en la cara q era planera, 5 hijos tiene. me grita: vos seguí alquilando&#33; decí q no la agarro de los pelos x mi hijo q no le gusta el bardo.</p>
+</li>
+<li><p>y dsp se comió un asado, moooy booeno👌👌🤣😂</p>
+</li>
+<li><p>mi hno se pone re denso no lo banco</p>
+</li>
+</ul></div>
+<h3 id="méxico"><a href="#méxico" class="header-anchor">México</a></h3>
+<div class="example"><ul>
+<li><p>_USR ahora si&#33; #achingarasumadre nefasto, corrupto y ratero, por mucho eres el peor alcalde que ha tenido _USR </p>
+</li>
+<li><p>ya me ando echando la primera ca** del año</p>
+</li>
+<li><p>_USR acá ya andaban con &quot;la chica que soñé&quot;</p>
+</li>
+<li><p>_USR ¿no se te olvidó ponerte calzones rojos hoy, verdad?</p>
+</li>
+<li><p>un minuto de silencio por los que se estan reventando los dedos y las manos con los cohetes &#33;&#33;&#33;</p>
+</li>
+<li><p>me alegra que se quemen los niños en sus fiestas, siempre se le puede echar la culpa a dios, no importa la estupidez humana, todo es culpa de dios ...</p>
+</li>
+</ul></div>
+<div class="page-foot">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> Eric S. Tellez <eric.tellez@infotec.mx>. Last modified: February 13, 2022.
+    Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+</div>
+</div><!-- CONTENT ENDS HERE -->
+  </main> <!-- end of id=main -->
+  <script src="/regional-spanish-models-talk-2022/libs/vela/metisMenu.min.js"></script>
+  <script src="/regional-spanish-models-talk-2022/libs/vela/slideout.min.js"></script>
+  
+  
+</body>
+</html>

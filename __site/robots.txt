@@ -1,0 +1,4 @@
+Sitemap: https://ingeotec.github.io/regional-spanish-models/sitemap.xml
+
+User-agent: *
+Disallow:

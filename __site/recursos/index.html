@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+   <link rel="stylesheet" href="/regional-spanish-models-talk-2022/libs/highlight/github.min.css">
+   
+
+  <link href="/regional-spanish-models-talk-2022/css/franklin.css" rel="stylesheet">
+<link href="/regional-spanish-models-talk-2022/css/vela.css" rel="stylesheet">
+<link href="/regional-spanish-models-talk-2022/css/mystyle.css" rel="stylesheet">
+
+<script src="/regional-spanish-models-talk-2022/libs/vela/jquery.min.js"></script>
+
+<link rel="icon" href="/regional-spanish-models-talk-2022/assets/favicon.png">
+
+
+  <title>Regional Spanish Models</title>
+</head>
+<body>
+<div class="main-nav slideout-menu slideout-menu-left" id="menu">
+  <div class="flex-container">
+    <span class="sidebar-brand">
+      <h3 style='font-size: 20px'>Regional Spanish</h3>
+    </span>
+  </div> <!-- class="flex-container" -->
+
+  <nav class="sidebar-nav">
+    <ul class="metismenu" id="metismenu" >
+      <li><a href="/regional-spanish-models-talk-2022/index.html">Introducción</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/corpora/">Corpus</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/recursos/">Recursos</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/emojis15/">Emojis-15</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/analisis/">Análisis</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/conclusiones/">Conclusiones y trabajo a futuro</a></li>
+    </ul>
+  </nav>
+</div> <!-- main nav menu -->
+
+<main id="panel" class="slidout-panel slideout-panel-left">
+  <div class="toggle-button hamburger hamburger--spin">
+    <div class="hamburger-box">
+      <div class="hamburger-inner"></div>
+    </div>
+  </div>
+  <h1 class="page title">Recursos</h1>
+  <hr>
+
+
+
+<!-- Content appended here -->
+<div class="franklin-content"><h1 id="recursos"><a href="#recursos" class="header-anchor">Recursos</a></h1>
+<p>Para solventar la falta de recursos regionales para las variantes de Español generamos los siguientes recursos modelos.</p>
+<ul>
+<li><p><a href="https://github.com/sadit/RegionalSpanish">Repositorio - recursos</a></p>
+</li>
+<li><p><a href="https://github.com/sadit/RegionalSpanish/tree/main/data/SpanishLang">https://github.com/sadit/RegionalSpanish/tree/main/data/SpanishLang</a></p>
+</li>
+</ul>
+<h2 id="vocabularios"><a href="#vocabularios" class="header-anchor">Vocabularios</a></h2>
+<div style="; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-raw-freq-per-region.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<div style="text-align: center; width: 100%;"> Frecuencias de tokens por región (rank 20)</div>
+</div>
+<h2 id="estadísticas_de_los_vocabularios"><a href="#estadísticas_de_los_vocabularios" class="header-anchor">Estadísticas de los vocabularios</a></h2>
+<pre><code class="language-julia">D &#61; CSV.read&#40;&quot;RegionalSpanish/data/SpanishLang/voc-stats.tsv.gz&quot;, DataFrame&#41;</code></pre>
+<pre><code class="plaintext code-output">| country_code |           n |    rawvoc |       voc |
+| ------------:| -----------:| ---------:| ---------:|
+|           AR | 129,774,176 | 3,302,464 |   669,745 |
+|           BO |     487,696 |   156,017 |    46,655 |
+|           BR |   3,823,792 |   594,117 |   125,785 |
+|           CA |     755,740 |   235,676 |    62,645 |
+|           CL |  22,364,784 | 1,252,438 |   281,290 |
+|           CO |  32,709,838 | 1,444,233 |   322,982 |
+|           CR |   3,811,036 |   339,908 |   102,446 |
+|           CU |     106,966 |    70,257 |    18,496 |
+|           DO |   3,157,663 |   387,205 |   108,063 |
+|           EC |   6,274,530 |   558,427 |   146,726 |
+|           ES |  62,624,884 | 2,773,605 |   567,617 |
+|           FR |     870,545 |   281,532 |    69,216 |
+|           GB |   1,214,321 |   316,173 |    81,686 |
+|           GQ |       3,217 |     9,128 |     1,110 |
+|           GT |   2,676,950 |   324,107 |    94,744 |
+|           HN |   1,119,389 |   198,786 |    60,193 |
+|           MX |  55,815,815 | 2,017,737 |   435,915 |
+|           NI |   1,737,769 |   223,418 |    68,230 |
+|           PA |   3,189,107 |   410,215 |   111,065 |
+|           PE |   8,047,752 |   720,045 |   177,080 |
+|           PR |     217,665 |    84,434 |    22,858 |
+|           PY |   4,758,976 |   450,555 |   123,447 |
+|           SV |   1,416,610 |   247,206 |    73,407 |
+|           US |  17,145,808 | 1,263,567 |   290,631 |
+|           UY |  15,894,226 |   802,633 |   199,000 |
+|           VE |  17,641,612 | 1,250,630 |   270,561 |
+|          ALL | 397,640,867 | 1,268,420 | 1,268,420 |
+
+</code></pre>
+<h3 id="tokens_más_populares"><a href="#tokens_más_populares" class="header-anchor">Tokens más populares</a></h3>
+
+
+<table>
+    <thead><tr>
+    <th>region</th>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+    <th>5</th>
+    <th>6</th>
+    <th>7</th>
+    <th>8</th>
+    <th>9</th>
+    <th>10</th>
+    <th>11</th>
+    <th>12</th>
+    <th>13</th>
+    <th>14</th>
+    <th>15</th>
+    <th>16</th>
+    <th>17</th>
+    <th>18</th>
+    <th>19</th>
+    <th>20</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>ALL</td>
+    <td>_usr</td>
+    <td>que</td>
+    <td>de</td>
+    <td>,</td>
+    <td>y</td>
+    <td>a</td>
+    <td>.</td>
+    <td>la</td>
+    <td>no</td>
+    <td>el</td>
+    <td>en</td>
+    <td>me</td>
+    <td>es</td>
+    <td>se</td>
+    <td>lo</td>
+    <td>un</td>
+    <td>con</td>
+    <td>0</td>
+    <td>los</td>
+    <td>por</td>
+    </tr>
+    <tr>
+    <td>AR</td>
+    <td>que</td>
+    <td>_usr</td>
+    <td>de</td>
+    <td>,</td>
+    <td>a</td>
+    <td>y</td>
+    <td>la</td>
+    <td>no</td>
+    <td>me</td>
+    <td>el</td>
+    <td>.</td>
+    <td>en</td>
+    <td>se</td>
+    <td>lo</td>
+    <td>es</td>
+    <td>un</td>
+    <td>con</td>
+    <td>mi</td>
+    <td>0</td>
+    <td>te</td>
+    </tr>
+    <tr>
+    <td>BO</td>
+    <td>_usr</td>
+    <td>de</td>
+    <td>que</td>
+    <td>.</td>
+    <td>,</td>
+    <td>la</td>
+    <td>y</td>
+    <td>el</td>
+    <td>a</td>
+    <td>en</td>
+    <td>no</td>
+    <td>_htag</td>
+    <td>es</td>
+    <td>los</td>
+    <td>se</td>
+    <td>por</td>
+    <td>un</td>
+    <td>0</td>
+    <td>con</td>
+    <td>lo</td>
+    </tr>
+    <tr>
+    <td>BR</td>
+    <td>_usr</td>
+    <td>de</td>
+    <td>,</td>
+    <td>que</td>
+    <td>a</td>
+    <td>no</td>
+    <td>_htag</td>
+    <td>.</td>
+    <td>me</td>
+    <td>0</td>
+    <td>la</td>
+    <td>y</td>
+    <td>el</td>
+    <td>en</td>
+    <td>te</td>
+    <td>!</td>
+    <td>por</td>
+    <td>o</td>
+    <td>se</td>
+    <td>?</td>
+    </tr>
+    <tr>
+    <td>CA</td>
+    <td>_usr</td>
+    <td>que</td>
+    <td>de</td>
+    <td>.</td>
+    <td>,</td>
+    <td>y</td>
+    <td>la</td>
+    <td>a</td>
+    <td>no</td>
+    <td>el</td>
+    <td>en</td>
+    <td>es</td>
+    <td>se</td>
+    <td>los</td>
+    <td>me</td>
+    <td>lo</td>
+    <td>un</td>
+    <td>por</td>
+    <td>0</td>
+    <td>con</td>
+    </tr>
+    <tr>
+    <td>CL</td>
+    <td>_usr</td>
+    <td>de</td>
+    <td>que</td>
+    <td>,</td>
+    <td>la</td>
+    <td>y</td>
+    <td>.</td>
+    <td>a</td>
+    <td>el</td>
+    <td>no</td>
+    <td>en</td>
+    <td>_htag</td>
+    <td>es</td>
+    <td>se</td>
+    <td>los</td>
+    <td>me</td>
+    <td>un</td>
+    <td>..</td>
+    <td>con</td>
+    <td>por</td>
+    </tr>
+    <tr>
+    <td>CO</td>
+    <td>_usr</td>
+    <td>que</td>
+    <td>de</td>
+    <td>.</td>
+    <td>,</td>
+    <td>y</td>
+    <td>la</td>
+    <td>a</td>
+    <td>no</td>
+    <td>el</td>
+    <td>en</td>
+    <td>es</td>
+    <td>me</td>
+    <td>se</td>
+    <td>por</td>
+    <td>lo</td>
+    <td>los</td>
+    <td>con</td>
+    <td>_htag</td>
+    <td>un</td>
+    </tr>
+    <tr>
+    <td>CR</td>
+    <td>_usr</td>
+    <td>que</td>
+    <td>de</td>
+    <td>,</td>
+    <td>y</td>
+    <td>.</td>
+    <td>a</td>
+    <td>la</td>
+    <td>no</td>
+    <td>el</td>
+    <td>en</td>
+    <td>me</td>
+    <td>es</td>
+    <td>se</td>
+    <td>un</td>
+    <td>0</td>
+    <td>lo</td>
+    <td>con</td>
+    <td>por</td>
+    <td>mi</td>
+    </tr>
+    <tr>
+    <td>CU</td>
+    <td>_usr</td>
+    <td>de</td>
+    <td>_htag</td>
+    <td>la</td>
+    <td>,</td>
+    <td>en</td>
+    <td>.</td>
+    <td>y</td>
+    <td>que</td>
+    <td>el</td>
+    <td>a</td>
+    <td>no</td>
+    <td>es</td>
+    <td>los</td>
+    <td>0</td>
+    <td>por</td>
+    <td>se</td>
+    <td>un</td>
+    <td>con</td>
+    <td>para</td>
+    </tr>
+    <tr>
+    <td>DO</td>
+    <td>_usr</td>
+    <td>que</td>
+    <td>de</td>
+    <td>.</td>
+    <td>,</td>
+    <td>y</td>
+    <td>la</td>
+    <td>el</td>
+    <td>a</td>
+    <td>en</td>
+    <td>no</td>
+    <td>es</td>
+    <td>_htag</td>
+    <td>se</td>
+    <td>los</td>
+    <td>0</td>
+    <td>por</td>
+    <td>un</td>
+    <td>lo</td>
+    <td>con</td>
+    </tr>
+    <tr>
+    <td>EC</td>
+    <td>_usr</td>
+    <td>de</td>
+    <td>que</td>
+    <td>.</td>
+    <td>,</td>
+    <td>la</td>
+    <td>y</td>
+    <td>a</td>
+    <td>el</td>
+    <td>en</td>
+    <td>no</td>
+    <td>es</td>
+    <td>_htag</td>
+    <td>se</td>
+    <td>los</td>
+    <td>0</td>
+    <td>por</td>
+    <td>con</td>
+    <td>lo</td>
+    <td>un</td>
+    </tr>
+    <tr>
+    <td>ES</td>
+    <td>_usr</td>
+    <td>que</td>
+    <td>de</td>
+    <td>,</td>
+    <td>.</td>
+    <td>y</td>
+    <td>a</td>
+    <td>la</td>
+    <td>no</td>
+    <td>el</td>
+    <td>en</td>
+    <td>es</td>
+    <td>me</td>
+    <td>lo</td>
+    <td>se</td>
+    <td>un</td>
+    <td>0</td>
+    <td>por</td>
+    <td>_htag</td>
+    <td>los</td>
+    </tr>
+    <tr>
+    <td>FR</td>
+    <td>_usr</td>
+    <td>de</td>
+    <td>que</td>
+    <td>.</td>
+    <td>,</td>
+    <td>y</td>
+    <td>la</td>
+    <td>a</td>
+    <td>no</td>
+    <td>en</td>
+    <td>el</td>
+    <td>es</td>
+    <td>me</td>
+    <td>un</td>
+    <td>0</td>
+    <td>se</td>
+    <td>lo</td>
+    <td>los</td>
+    <td>_htag</td>
+    <td>por</td>
+    </tr>
+    <tr>
+    <td>GB</td>
+    <td>_usr</td>
+    <td>que</td>
+    <td>de</td>
+    <td>.</td>
+    <td>,</td>
+    <td>y</td>
+    <td>a</td>
+    <td>la</td>
+    <td>no</td>
+    <td>el</td>
+    <td>en</td>
+    <td>me</td>
+    <td>es</td>
+    <td>lo</td>
+    <td>un</td>
+    <td>se</td>
+    <td>0</td>
+    <td>por</td>
+    <td>los</td>
+    <td>con</td>
+    </tr>
+    <tr>
+    <td>GQ</td>
+    <td>_usr</td>
+    <td>.</td>
+    <td>que</td>
+    <td>de</td>
+    <td>,</td>
+    <td>la</td>
+    <td>a</td>
+    <td>el</td>
+    <td>no</td>
+    <td>y</td>
+    <td>en</td>
+    <td>_htag</td>
+    <td>es</td>
+    <td>los</td>
+    <td>lo</td>
+    <td>por</td>
+    <td>un</td>
+    <td>se</td>
+    <td>me</td>
+    <td>?</td>
+    </tr>
+    <tr>
+    <td>GT</td>
+    <td>_usr</td>
+    <td>que</td>
+    <td>de</td>
+    <td>.</td>
+    <td>,</td>
+    <td>y</td>
+    <td>la</td>
+    <td>a</td>
+    <td>no</td>
+    <td>el</td>
+    <td>en</td>
+    <td>es</td>
+    <td>me</td>
+    <td>se</td>
+    <td>_htag</td>
+    <td>lo</td>
+    <td>por</td>
+    <td>..</td>
+    <td>los</td>
+    <td>0</td>
+    </tr>
+    <tr>
+    <td>HN</td>
+    <td>_usr</td>
+    <td>que</td>
+    <td>de</td>
+    <td>.</td>
+    <td>,</td>
+    <td>y</td>
+    <td>la</td>
+    <td>a</td>
+    <td>el</td>
+    <td>no</td>
+    <td>en</td>
+    <td>es</td>
+    <td>_htag</td>
+    <td>me</td>
+    <td>se</td>
+    <td>0</td>
+    <td>lo</td>
+    <td>por</td>
+    <td>los</td>
+    <td>con</td>
+    </tr>
+    <tr>
+    <td>MX</td>
+    <td>_usr</td>
+    <td>que</td>
+    <td>de</td>
+    <td>,</td>
+    <td>.</td>
+    <td>y</td>
+    <td>a</td>
+    <td>la</td>
+    <td>no</td>
+    <td>el</td>
+    <td>en</td>
+    <td>me</td>
+    <td>_htag</td>
+    <td>es</td>
+    <td>se</td>
+    <td>por</td>
+    <td>mi</td>
+    <td>un</td>
+    <td>con</td>
+    <td>0</td>
+    </tr>
+    <tr>
+    <td>NI</td>
+    <td>que</td>
+    <td>de</td>
+    <td>_usr</td>
+    <td>,</td>
+    <td>a</td>
+    <td>y</td>
+    <td>la</td>
+    <td>no</td>
+    <td>.</td>
+    <td>me</td>
+    <td>el</td>
+    <td>en</td>
+    <td>es</td>
+    <td>se</td>
+    <td>mi</td>
+    <td>_htag</td>
+    <td>lo</td>
+    <td>0</td>
+    <td>por</td>
+    <td>con</td>
+    </tr>
+    <tr>
+    <td>PA</td>
+    <td>_usr</td>
+    <td>de</td>
+    <td>que</td>
+    <td>.</td>
+    <td>y</td>
+    <td>la</td>
+    <td>,</td>
+    <td>a</td>
+    <td>el</td>
+    <td>no</td>
+    <td>en</td>
+    <td>es</td>
+    <td>se</td>
+    <td>los</td>
+    <td>me</td>
+    <td>lo</td>
+    <td>0</td>
+    <td>por</td>
+    <td>con</td>
+    <td>un</td>
+    </tr>
+    <tr>
+    <td>PE</td>
+    <td>_usr</td>
+    <td>de</td>
+    <td>que</td>
+    <td>,</td>
+    <td>.</td>
+    <td>y</td>
+    <td>la</td>
+    <td>a</td>
+    <td>no</td>
+    <td>el</td>
+    <td>en</td>
+    <td>es</td>
+    <td>_htag</td>
+    <td>se</td>
+    <td>me</td>
+    <td>los</td>
+    <td>por</td>
+    <td>lo</td>
+    <td>con</td>
+    <td>0</td>
+    </tr>
+    <tr>
+    <td>PR</td>
+    <td>_usr</td>
+    <td>que</td>
+    <td>de</td>
+    <td>.</td>
+    <td>y</td>
+    <td>a</td>
+    <td>,</td>
+    <td>la</td>
+    <td>no</td>
+    <td>en</td>
+    <td>el</td>
+    <td>me</td>
+    <td>es</td>
+    <td>0</td>
+    <td>se</td>
+    <td>lo</td>
+    <td>yo</td>
+    <td>con</td>
+    <td>los</td>
+    <td>un</td>
+    </tr>
+    <tr>
+    <td>PY</td>
+    <td>_usr</td>
+    <td>que</td>
+    <td>de</td>
+    <td>,</td>
+    <td>a</td>
+    <td>y</td>
+    <td>la</td>
+    <td>.</td>
+    <td>no</td>
+    <td>el</td>
+    <td>en</td>
+    <td>es</td>
+    <td>se</td>
+    <td>me</td>
+    <td>_htag</td>
+    <td>por</td>
+    <td>0</td>
+    <td>un</td>
+    <td>lo</td>
+    <td>con</td>
+    </tr>
+    <tr>
+    <td>SV</td>
+    <td>_usr</td>
+    <td>de</td>
+    <td>que</td>
+    <td>,</td>
+    <td>.</td>
+    <td>la</td>
+    <td>y</td>
+    <td>el</td>
+    <td>a</td>
+    <td>no</td>
+    <td>en</td>
+    <td>es</td>
+    <td>los</td>
+    <td>se</td>
+    <td>por</td>
+    <td>0</td>
+    <td>lo</td>
+    <td>_htag</td>
+    <td>con</td>
+    <td>un</td>
+    </tr>
+    <tr>
+    <td>US</td>
+    <td>_usr</td>
+    <td>que</td>
+    <td>de</td>
+    <td>.</td>
+    <td>y</td>
+    <td>,</td>
+    <td>a</td>
+    <td>la</td>
+    <td>no</td>
+    <td>el</td>
+    <td>en</td>
+    <td>me</td>
+    <td>es</td>
+    <td>se</td>
+    <td>lo</td>
+    <td>los</td>
+    <td>un</td>
+    <td>por</td>
+    <td>0</td>
+    <td>con</td>
+    </tr>
+    <tr>
+    <td>UY</td>
+    <td>que</td>
+    <td>de</td>
+    <td>,</td>
+    <td>_usr</td>
+    <td>y</td>
+    <td>a</td>
+    <td>la</td>
+    <td>no</td>
+    <td>me</td>
+    <td>el</td>
+    <td>en</td>
+    <td>.</td>
+    <td>se</td>
+    <td>es</td>
+    <td>lo</td>
+    <td>un</td>
+    <td>con</td>
+    <td>0</td>
+    <td>los</td>
+    <td>jaja</td>
+    </tr>
+    <tr>
+    <td>VE</td>
+    <td>_usr</td>
+    <td>de</td>
+    <td>que</td>
+    <td>.</td>
+    <td>,</td>
+    <td>y</td>
+    <td>la</td>
+    <td>a</td>
+    <td>el</td>
+    <td>no</td>
+    <td>en</td>
+    <td>es</td>
+    <td>se</td>
+    <td>los</td>
+    <td>0</td>
+    <td>_htag</td>
+    <td>por</td>
+    <td>con</td>
+    <td>lo</td>
+    <td>me</td>
+    </tr>
+    </tbody>
+    </table>
+    
+<h3 id="tokens_comunes_a_regiones"><a href="#tokens_comunes_a_regiones" class="header-anchor">Tokens comunes a regiones</a></h3>
+<div style="; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="https://raw.githubusercontent.com/sadit/RegionalSpanish/main/figs/fig-common-tokens-per-region.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<div style="text-align: center; width: 100%;"> Tokens comunes: ¿En cuántas regiones aparece un token?</div>
+</div>
+<h3 id="emojis"><a href="#emojis" class="header-anchor">Emojis</a></h3>
+<div class="definition">Los emojis son símbolos usados para expresar de manera corta y concisa una carga emocional.  Suelen ser útiles para los modelos de análisis de texto ya que son altamente expresivos. Los emojis más populares por región se muestran a continuación:</div>
+
+<table><tr><th align="right">region</th><th align="right">1</th><th align="right">2</th><th align="right">3</th><th align="right">4</th><th align="right">5</th><th align="right">6</th><th align="right">7</th><th align="right">8</th><th align="right">9</th><th align="right">10</th><th align="right">11</th><th align="right">12</th><th align="right">13</th><th align="right">14</th><th align="right">15</th><th align="right">16</th><th align="right">17</th><th align="right">18</th><th align="right">19</th><th align="right">20</th></tr><tr><td align="right">ALL</td><td align="right">😂</td><td align="right">😍</td><td align="right">❤</td><td align="right">😭</td><td align="right">🏻</td><td align="right">‍</td><td align="right">🎶</td><td align="right">😘</td><td align="right">🙄</td><td align="right">👏</td><td align="right">🤔</td><td align="right">🏼</td><td align="right">👌</td><td align="right">😊</td><td align="right">💕</td><td align="right">🙏</td><td align="right">♀</td><td align="right">🤣</td><td align="right">😒</td><td align="right">🤦</td></tr><tr><td align="right">AR</td><td align="right">😂</td><td align="right">😍</td><td align="right">❤</td><td align="right">😭</td><td align="right">🎶</td><td align="right">👌</td><td align="right">😘</td><td align="right">👏</td><td align="right">😒</td><td align="right">‍</td><td align="right">💕</td><td align="right">😊</td><td align="right">🏻</td><td align="right">💔</td><td align="right">💪</td><td align="right">🙄</td><td align="right">🤦</td><td align="right">🙌</td><td align="right">😢</td><td align="right">♥</td></tr><tr><td align="right">BO</td><td align="right">😂</td><td align="right">❤</td><td align="right">🇧</td><td align="right">🇴</td><td align="right">😍</td><td align="right">🏻</td><td align="right">😭</td><td align="right">🇪</td><td align="right">🇸</td><td align="right">🤣</td><td align="right">‍</td><td align="right">😊</td><td align="right">💪</td><td align="right">🇷</td><td align="right">😘</td><td align="right">👏</td><td align="right">🇦</td><td align="right">😅</td><td align="right">🙏</td><td align="right">📣</td></tr><tr><td align="right">BR</td><td align="right">❤</td><td align="right">😂</td><td align="right">😍</td><td align="right">🎶</td><td align="right">🏻</td><td align="right">😘</td><td align="right">🙏</td><td align="right">👏</td><td align="right">😭</td><td align="right">‍</td><td align="right">🇷</td><td align="right">♥</td><td align="right">🇧</td><td align="right">🏼</td><td align="right">💕</td><td align="right">🤣</td><td align="right">💙</td><td align="right">🙄</td><td align="right">🤔</td><td align="right">🏽</td></tr><tr><td align="right">CA</td><td align="right">😂</td><td align="right">🏻</td><td align="right">‍</td><td align="right">❤</td><td align="right">😍</td><td align="right">🏼</td><td align="right">♀</td><td align="right">😭</td><td align="right">🤔</td><td align="right">🇨</td><td align="right">🤣</td><td align="right">🙄</td><td align="right">🤷</td><td align="right">🇦</td><td align="right">😉</td><td align="right">😘</td><td align="right">🙏</td><td align="right">🤦</td><td align="right">🏽</td><td align="right">😊</td></tr><tr><td align="right">CL</td><td align="right">😂</td><td align="right">🏻</td><td align="right">❤</td><td align="right">😍</td><td align="right">‍</td><td align="right">🤔</td><td align="right">👏</td><td align="right">🤣</td><td align="right">😭</td><td align="right">🙄</td><td align="right">😊</td><td align="right">🏼</td><td align="right">😘</td><td align="right">🤦</td><td align="right">🇨</td><td align="right">🇱</td><td align="right">💪</td><td align="right">👍</td><td align="right">😉</td><td align="right">♂</td></tr><tr><td align="right">CO</td><td align="right">😂</td><td align="right">😍</td><td align="right">🎶</td><td align="right">❤</td><td align="right">🏻</td><td align="right">😭</td><td align="right">‍</td><td align="right">🙏</td><td align="right">👌</td><td align="right">🙄</td><td align="right">🤣</td><td align="right">🏼</td><td align="right">♀</td><td align="right">🤔</td><td align="right">💕</td><td align="right">😔</td><td align="right">😒</td><td align="right">🤦</td><td align="right">👏</td><td align="right">💔</td></tr><tr><td align="right">CR</td><td align="right">😂</td><td align="right">❤</td><td align="right">😭</td><td align="right">😍</td><td align="right">🏻</td><td align="right">‍</td><td align="right">🙄</td><td align="right">🏼</td><td align="right">🤔</td><td align="right">♀</td><td align="right">🏽</td><td align="right">🤦</td><td align="right">🙌</td><td align="right">😅</td><td align="right">😒</td><td align="right">♂</td><td align="right">💔</td><td align="right">🤷</td><td align="right">🎶</td><td align="right">🇷</td></tr><tr><td align="right">CU</td><td align="right">🇺</td><td align="right">🇨</td><td align="right">😂</td><td align="right">🏻</td><td align="right">‍</td><td align="right">🤣</td><td align="right">❤</td><td align="right">😍</td><td align="right">♂</td><td align="right">😘</td><td align="right">😉</td><td align="right">🤦</td><td align="right">♀</td><td align="right">🤔</td><td align="right">🤷</td><td align="right">👍</td><td align="right">😅</td><td align="right">😭</td><td align="right">🙏</td><td align="right">👏</td></tr><tr><td align="right">DO</td><td align="right">😂</td><td align="right">😍</td><td align="right">‍</td><td align="right">🏻</td><td align="right">🎶</td><td align="right">🤣</td><td align="right">❤</td><td align="right">😭</td><td align="right">🤦</td><td align="right">🏽</td><td align="right">🙏</td><td align="right">🤔</td><td align="right">🙄</td><td align="right">♀</td><td align="right">♂</td><td align="right">😩</td><td align="right">😘</td><td align="right">🙌</td><td align="right">🙈</td><td align="right">🏼</td></tr><tr><td align="right">EC</td><td align="right">😂</td><td align="right">😍</td><td align="right">❤</td><td align="right">🏻</td><td align="right">😭</td><td align="right">‍</td><td align="right">🤣</td><td align="right">🎶</td><td align="right">🙏</td><td align="right">🏼</td><td align="right">👏</td><td align="right">🤔</td><td align="right">🇪</td><td align="right">😊</td><td align="right">🇨</td><td align="right">🙄</td><td align="right">♀</td><td align="right">😔</td><td align="right">💕</td><td align="right">😘</td></tr><tr><td align="right">ES</td><td align="right">😂</td><td align="right">😍</td><td align="right">😘</td><td align="right">❤</td><td align="right">🏻</td><td align="right">👏</td><td align="right">😉</td><td align="right">😭</td><td align="right">😊</td><td align="right">💪</td><td align="right">‍</td><td align="right">🏼</td><td align="right">🤣</td><td align="right">🤔</td><td align="right">😅</td><td align="right">😜</td><td align="right">🙄</td><td align="right">👍</td><td align="right">👌</td><td align="right">♀</td></tr><tr><td align="right">FR</td><td align="right">😂</td><td align="right">😘</td><td align="right">❤</td><td align="right">😍</td><td align="right">😭</td><td align="right">🏻</td><td align="right">💋</td><td align="right">‍</td><td align="right">😉</td><td align="right">🏼</td><td align="right">😊</td><td align="right">🇷</td><td align="right">👍</td><td align="right">👏</td><td align="right">🎶</td><td align="right">🤔</td><td align="right">♀</td><td align="right">👌</td><td align="right">🤣</td><td align="right">💪</td></tr><tr><td align="right">GB</td><td align="right">😂</td><td align="right">😍</td><td align="right">❤</td><td align="right">🏻</td><td align="right">‍</td><td align="right">😭</td><td align="right">🏼</td><td align="right">😉</td><td align="right">😘</td><td align="right">🤣</td><td align="right">😊</td><td align="right">🤔</td><td align="right">👏</td><td align="right">👍</td><td align="right">🙄</td><td align="right">♀</td><td align="right">😅</td><td align="right">👌</td><td align="right">🏽</td><td align="right">♂</td></tr><tr><td align="right">GQ</td><td align="right">😂</td><td align="right">❤</td><td align="right">😘</td><td align="right">😭</td><td align="right">😍</td><td align="right">😊</td><td align="right">🇬</td><td align="right">👏</td><td align="right">🇶</td><td align="right">😀</td><td align="right">😒</td><td align="right">🏽</td><td align="right">🤔</td><td align="right">🙄</td><td align="right">‍</td><td align="right">🏾</td><td align="right">😉</td><td align="right">😎</td><td align="right">😃</td><td align="right">😕</td></tr><tr><td align="right">GT</td><td align="right">😂</td><td align="right">😍</td><td align="right">❤</td><td align="right">🏻</td><td align="right">😭</td><td align="right">🤣</td><td align="right">🎶</td><td align="right">😊</td><td align="right">‍</td><td align="right">🙄</td><td align="right">🤔</td><td align="right">🏼</td><td align="right">👌</td><td align="right">😘</td><td align="right">😅</td><td align="right">😉</td><td align="right">💕</td><td align="right">😒</td><td align="right">😏</td><td align="right">😁</td></tr><tr><td align="right">HN</td><td align="right">😂</td><td align="right">❤</td><td align="right">😍</td><td align="right">😭</td><td align="right">🏻</td><td align="right">🤣</td><td align="right">‍</td><td align="right">🎶</td><td align="right">🙄</td><td align="right">♀</td><td align="right">🤔</td><td align="right">🇳</td><td align="right">🇭</td><td align="right">🏼</td><td align="right">🤷</td><td align="right">😅</td><td align="right">🙏</td><td align="right">🏽</td><td align="right">🥺</td><td align="right">♂</td></tr><tr><td align="right">MX</td><td align="right">😂</td><td align="right">❤</td><td align="right">😍</td><td align="right">🏻</td><td align="right">😭</td><td align="right">‍</td><td align="right">🤔</td><td align="right">🏼</td><td align="right">🙄</td><td align="right">😘</td><td align="right">🙏</td><td align="right">♀</td><td align="right">🎶</td><td align="right">💕</td><td align="right">😊</td><td align="right">😢</td><td align="right">👏</td><td align="right">🙊</td><td align="right">🤦</td><td align="right">👌</td></tr><tr><td align="right">NI</td><td align="right">😂</td><td align="right">❤</td><td align="right">😍</td><td align="right">😭</td><td align="right">🏻</td><td align="right">🎶</td><td align="right">🙄</td><td align="right">‍</td><td align="right">😒</td><td align="right">🤔</td><td align="right">💕</td><td align="right">🤣</td><td align="right">😅</td><td align="right">👌</td><td align="right">💔</td><td align="right">♀</td><td align="right">😏</td><td align="right">🏼</td><td align="right">😔</td><td align="right">😩</td></tr><tr><td align="right">PA</td><td align="right">😂</td><td align="right">🏻</td><td align="right">❤</td><td align="right">‍</td><td align="right">😍</td><td align="right">🤣</td><td align="right">😭</td><td align="right">🤔</td><td align="right">♀</td><td align="right">🙄</td><td align="right">🏼</td><td align="right">🤦</td><td align="right">♂</td><td align="right">🎶</td><td align="right">🇦</td><td align="right">🇵</td><td align="right">🤷</td><td align="right">😩</td><td align="right">🏽</td><td align="right">👏</td></tr><tr><td align="right">PE</td><td align="right">😂</td><td align="right">😍</td><td align="right">❤</td><td align="right">😭</td><td align="right">🏻</td><td align="right">🤔</td><td align="right">😊</td><td align="right">🙄</td><td align="right">‍</td><td align="right">🎶</td><td align="right">🇪</td><td align="right">😘</td><td align="right">🇵</td><td align="right">💕</td><td align="right">🏼</td><td align="right">🙏</td><td align="right">😢</td><td align="right">👏</td><td align="right">💪</td><td align="right">🤣</td></tr><tr><td align="right">PR</td><td align="right">😂</td><td align="right">🙄</td><td align="right">🏻</td><td align="right">😭</td><td align="right">🏼</td><td align="right">😒</td><td align="right">❤</td><td align="right">😩</td><td align="right">🤔</td><td align="right">😍</td><td align="right">🎶</td><td align="right">😘</td><td align="right">🙏</td><td align="right">🏽</td><td align="right">💪</td><td align="right">🙌</td><td align="right">🔥</td><td align="right">💖</td><td align="right">😹</td><td align="right">🎧</td></tr><tr><td align="right">PY</td><td align="right">😂</td><td align="right">😍</td><td align="right">❤</td><td align="right">😭</td><td align="right">🏻</td><td align="right">🎶</td><td align="right">🤣</td><td align="right">‍</td><td align="right">🤔</td><td align="right">🙄</td><td align="right">💪</td><td align="right">👌</td><td align="right">👏</td><td align="right">💔</td><td align="right">🙌</td><td align="right">🏼</td><td align="right">♀</td><td align="right">😢</td><td align="right">😅</td><td align="right">😎</td></tr><tr><td align="right">SV</td><td align="right">😂</td><td align="right">❤</td><td align="right">🤣</td><td align="right">😍</td><td align="right">😭</td><td align="right">🏻</td><td align="right">🎶</td><td align="right">😊</td><td align="right">🤔</td><td align="right">😎</td><td align="right">😅</td><td align="right">‍</td><td align="right">🙄</td><td align="right">🙏</td><td align="right">👏</td><td align="right">👌</td><td align="right">😒</td><td align="right">💕</td><td align="right">🏼</td><td align="right">😏</td></tr><tr><td align="right">US</td><td align="right">😂</td><td align="right">🏻</td><td align="right">‍</td><td align="right">❤</td><td align="right">😍</td><td align="right">😭</td><td align="right">🏼</td><td align="right">🙄</td><td align="right">♀</td><td align="right">🏽</td><td align="right">😘</td><td align="right">🤣</td><td align="right">🤔</td><td align="right">🙏</td><td align="right">🎶</td><td align="right">🤦</td><td align="right">😩</td><td align="right">🤷</td><td align="right">♂</td><td align="right">🔥</td></tr><tr><td align="right">UY</td><td align="right">😂</td><td align="right">😍</td><td align="right">🏻</td><td align="right">‍</td><td align="right">❤</td><td align="right">🎶</td><td align="right">🏼</td><td align="right">🙌</td><td align="right">🙄</td><td align="right">😭</td><td align="right">♀</td><td align="right">🤦</td><td align="right">😒</td><td align="right">🤔</td><td align="right">💪</td><td align="right">👏</td><td align="right">👌</td><td align="right">🏽</td><td align="right">🙏</td><td align="right">😘</td></tr><tr><td align="right">VE</td><td align="right">😂</td><td align="right">😍</td><td align="right">❤</td><td align="right">😭</td><td align="right">🙏</td><td align="right">🇪</td><td align="right">♥</td><td align="right">🇻</td><td align="right">🎶</td><td align="right">😘</td><td align="right">💕</td><td align="right">🏻</td><td align="right">👏</td><td align="right">😊</td><td align="right">🤔</td><td align="right">👌</td><td align="right">🙄</td><td align="right">🤣</td><td align="right">✨</td><td align="right">😏</td></tr></table>
+
+<h2 id="modelos_semanticos_word-embeddings_regionales_fasttext"><a href="#modelos_semanticos_word-embeddings_regionales_fasttext" class="header-anchor">Modelos semanticos: <em>word-embeddings</em> regionales &#40;fastText&#41;</a></h2>
+<div class="definition">26 embeddings regionales de  <a href="https://fasttext.cc/">fastText</a> usando los parametros por omisión. Cada modelo tiene vectores de 300 dimensiones, y tienen diferentes tamaños. Los archivos <code>bin</code> son binarios en el formato nativo de fastText y los <code>vec</code> son archivos de texto &#40;en el formato fastText&#41; que pueden ser abiertos desde otros ambientes fácilmente, así como para crear modelos supervisados con las herramientas del mismo fastText.</div>
+<table><tr><th align="right">country</th><th align="center">code</th><th align="center">binary model</th><th align="center">vec model</th></tr><tr><td align="right">Argentina</td><td align="center">AR</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/AR.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/AR.vec">vec</a></td></tr><tr><td align="right">Bolivia</td><td align="center">BO</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/BO.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/BO.vec">vec</a></td></tr><tr><td align="right">Brazil</td><td align="center">BR</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/BR.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/BR.vec">vec</a></td></tr><tr><td align="right">Canadá</td><td align="center">CA</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/CA.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/CA.vec">vec</a></td></tr><tr><td align="right">Chile</td><td align="center">CL</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/CL.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/CL.vec">vec</a></td></tr><tr><td align="right">Colombia</td><td align="center">CO</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/CO.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/CO.vec">vec</a></td></tr><tr><td align="right">Costa Rica</td><td align="center">CR</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/CR.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/CR.vec">vec</a></td></tr><tr><td align="right">Cuba</td><td align="center">CU</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/CU.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/CU.vec">vec</a></td></tr><tr><td align="right">República Dominicana</td><td align="center">DO</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/DO.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/DO.vec">vec</a></td></tr><tr><td align="right">Ecuador</td><td align="center">EC</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/EC.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/EC.vec">vec</a></td></tr><tr><td align="right">España</td><td align="center">ES</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/ES.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/ES.vec">vec</a></td></tr><tr><td align="right">Francia</td><td align="center">FR</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/FR.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/FR.vec">vec</a></td></tr><tr><td align="right">Great Britain</td><td align="center">GB</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/GB.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/GB.vec">vec</a></td></tr><tr><td align="right">Guinea Equatorial</td><td align="center">GQ</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/GQ.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/GQ.vec">vec</a></td></tr><tr><td align="right">Guatemala</td><td align="center">GT</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/GT.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/GT.vec">vec</a></td></tr><tr><td align="right">Honduras</td><td align="center">HN</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/HN.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/HN.vec">vec</a></td></tr><tr><td align="right">México</td><td align="center">MX</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/MX.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/MX.vec">vec</a></td></tr><tr><td align="right">Nicaragua</td><td align="center">NI</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/NI.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/NI.vec">vec</a></td></tr><tr><td align="right">Panamá</td><td align="center">PA</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/PA.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/PA.vec">vec</a></td></tr><tr><td align="right">Perú</td><td align="center">PE</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/PE.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/PE.vec">vec</a></td></tr><tr><td align="right">Puerto Rico</td><td align="center">PR</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/PR.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/PR.vec">vec</a></td></tr><tr><td align="right">Paraguay</td><td align="center">PY</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/PY.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/PY.vec">vec</a></td></tr><tr><td align="right">El Salvador</td><td align="center">SV</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/SV.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/SV.vec">vec</a></td></tr><tr><td align="right">United States of America</td><td align="center">US</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/US.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/US.vec">vec</a></td></tr><tr><td align="right">Uruguay</td><td align="center">UY</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/UY.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/UY.vec">vec</a></td></tr><tr><td align="right">Venezuela</td><td align="center">VE</td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/VE.bin">bin</a></td><td align="center"><a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/VE.vec">vec</a></td></tr></table>
+<p><strong>LARGE:</strong>   <a href="http://geo.ingeotec.mx/~sadit/regional-spanish-models/ALL.bin">ALL</a></p>
+<h1 id="modelos_de_lenguaje_regionalizados"><a href="#modelos_de_lenguaje_regionalizados" class="header-anchor">Modelos de lenguaje regionalizados</a></h1>
+<p>BERT &#40;Bidirectional Encoder Representations from Transformers&#41; regionales</p>
+<div class="warn">en construcción&#33;...</div>
+<div class="page-foot">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> Eric S. Tellez <eric.tellez@infotec.mx>. Last modified: February 13, 2022.
+    Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+</div>
+</div><!-- CONTENT ENDS HERE -->
+  </main> <!-- end of id=main -->
+  <script src="/regional-spanish-models-talk-2022/libs/vela/metisMenu.min.js"></script>
+  <script src="/regional-spanish-models-talk-2022/libs/vela/slideout.min.js"></script>
+  
+  
+    <script src="/regional-spanish-models-talk-2022/libs/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();hljs.configure({tabReplace: '    '});</script>
+
+  
+</body>
+</html>

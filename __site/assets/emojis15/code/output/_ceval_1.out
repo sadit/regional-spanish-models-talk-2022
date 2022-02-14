@@ -1,0 +1,11 @@
+Summary Stats:
+Length:         22
+Missing Count:  0
+Mean:           8.090909
+Minimum:        1.000000
+1st Quartile:   1.000000
+Median:         6.500000
+3rd Quartile:   13.000000
+Maximum:        23.000000
+Type:           Int64
+describe(D.localrank) = nothing
