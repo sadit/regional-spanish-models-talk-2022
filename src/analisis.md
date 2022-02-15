@@ -39,7 +39,7 @@ Usando un vocabulario reducido que aparece en al menos 10 regiones, i.e., de tam
 \img{}{/figs/fig-voc-semantic-umap.png}{Visualización UMAP 2D y 3D (colores) de word embeddings regionales}{}
 
 @@definition
-La gráfica de los $k$ vecinos se aproxima mediante el uso del paquete [https://github.com/sadit/SimilaritySearch.jl]() que de otra forma es una operación muy costosa. Las reducciones de dimensión se realizaron con [https://github.com/sadit/UMAP.jl]() que esta integrado con `SimilaritySearch.jl`.
+La gráfica de los $k$ vecinos se aproxima mediante el uso del paquete [https://github.com/sadit/SimilaritySearch.jl](https://github.com/sadit/SimilaritySearch.jl) que de otra forma es una operación muy costosa. Las reducciones de dimensión se realizaron con [https://github.com/sadit/UMAP.jl](https://github.com/sadit/UMAP.jl) que esta integrado con `SimilaritySearch.jl`.
 @@
 
 
@@ -63,10 +63,10 @@ println(read("ejemplos-palabras-knn.md", String))
 - Altamente eficiente para cálculo de las gráficas de $k$ vecinos
 - Amplia flexibilidad en funciones de distancias (pre-metricas):
   - Viene con distancias Minkowski, distance de ángulo/coseno, distancias cadenas (Levenshtein), distancias entre conjuntos, distancias Hamming a nivel de bits, distancia de Hausdorff.
-  - Aquellas definidas en [https://github.com/JuliaStats/Distances.jl]().
+  - Aquellas definidas en [https://github.com/JuliaStats/Distances.jl](https://github.com/JuliaStats/Distances.jl).
   - Las funciones especificadas por el usuario veloces.
 
-- Con calidad controlada: mejor tradeoff costo de construcción, tiempo de búsqueda, memoria: _Similarity search on neighbor's graphs with automatic Pareto optimal performance and minimum expected quality setups based on hyperparameter optimization_. Eric S. Tellez, Guillermo Ruiz [https://arxiv.org/abs/2201.07917]()
+- Con calidad controlada: mejor tradeoff costo de construcción, tiempo de búsqueda, memoria: _Similarity search on neighbor's graphs with automatic Pareto optimal performance and minimum expected quality setups based on hyperparameter optimization_. Eric S. Tellez, Guillermo Ruiz [https://arxiv.org/abs/2201.07917](https://arxiv.org/abs/2201.07917)
 @@
 
 

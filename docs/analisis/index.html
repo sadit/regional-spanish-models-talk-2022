@@ -109,7 +109,7 @@
 <div style="; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-voc-semantic-umap.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Visualización UMAP 2D y 3D (colores) de word embeddings regionales</div>
 </div>
-<div class="definition">La gráfica de los <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span> vecinos se aproxima mediante el uso del paquete <a href="">https://github.com/sadit/SimilaritySearch.jl</a> que de otra forma es una operación muy costosa. Las reducciones de dimensión se realizaron con <a href="">https://github.com/sadit/UMAP.jl</a> que esta integrado con <code>SimilaritySearch.jl</code>.</div>
+<div class="definition">La gráfica de los <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span> vecinos se aproxima mediante el uso del paquete <a href="https://github.com/sadit/SimilaritySearch.jl">https://github.com/sadit/SimilaritySearch.jl</a> que de otra forma es una operación muy costosa. Las reducciones de dimensión se realizaron con <a href="https://github.com/sadit/UMAP.jl">https://github.com/sadit/UMAP.jl</a> que esta integrado con <code>SimilaritySearch.jl</code>.</div>
 <h3 id="ejemplos_de_k_vecinos"><a href="#ejemplos_de_k_vecinos" class="header-anchor">Ejemplos de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span> vecinos</a></h3>
 <p><a href="https://github.com/sadit/RegionalSpanish/blob/main/notebooks/explore-region-similarities.ipynb">Notebook ejemplos</a></p>
 <pre><code class="language-julia">println&#40;read&#40;&quot;ejemplos-palabras-knn.md&quot;, String&#41;&#41;</code></pre>
@@ -2008,13 +2008,13 @@
 <ul>
 <li><p>Viene con distancias Minkowski, distance de ángulo/coseno, distancias cadenas &#40;Levenshtein&#41;, distancias entre conjuntos, distancias Hamming a nivel de bits, distancia de Hausdorff.</p>
 </li>
-<li><p>Aquellas definidas en <a href="">https://github.com/JuliaStats/Distances.jl</a>.</p>
+<li><p>Aquellas definidas en <a href="https://github.com/JuliaStats/Distances.jl">https://github.com/JuliaStats/Distances.jl</a>.</p>
 </li>
 <li><p>Las funciones especificadas por el usuario veloces.</p>
 </li>
 </ul>
 </li>
-<li><p>Con calidad controlada: mejor tradeoff costo de construcción, tiempo de búsqueda, memoria: <em>Similarity search on neighbor&#39;s graphs with automatic Pareto optimal performance and minimum expected quality setups based on hyperparameter optimization</em>. Eric S. Tellez, Guillermo Ruiz <a href="">https://arxiv.org/abs/2201.07917</a></p>
+<li><p>Con calidad controlada: mejor tradeoff costo de construcción, tiempo de búsqueda, memoria: <em>Similarity search on neighbor&#39;s graphs with automatic Pareto optimal performance and minimum expected quality setups based on hyperparameter optimization</em>. Eric S. Tellez, Guillermo Ruiz <a href="https://arxiv.org/abs/2201.07917">https://arxiv.org/abs/2201.07917</a></p>
 </li>
 </ul></div>
 
@@ -2111,7 +2111,7 @@
   </div>
 
 <div class="page-foot">
-    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> Eric S. Tellez <eric.tellez@infotec.mx>. Last modified: February 14, 2022.
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> Eric S. Tellez <eric.tellez@infotec.mx>. Last modified: February 15, 2022.
     Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
 </div>
 </div><!-- CONTENT ENDS HERE -->
