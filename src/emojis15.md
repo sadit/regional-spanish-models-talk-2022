@@ -12,6 +12,7 @@ Predicción emojis que podrían estar asociados a un mensaje
 - Tomamos mensajes georeferenciados enero-febrero 2020
 - Seleccionamos los emoji objetivos entre los más populares en español: 🥺, ❤, 👌, 👏, 💔, 😄, 😊, 😌, 😍, 😒, 😘, 😡, 😢, 😭, 🤔
 - Para cada región seleccionamos mensajes con solo uno de estos emoji
+- El emoji en cuestión se reemplaza por la cadena `_emo` y se usa como etiqueta
 - Partición 50-50 por cada región, se reporta micro recall
 - Usamos fastText supevisado con cada uno de los modelos regionales como preentrenados -- all vs all 
 @@
