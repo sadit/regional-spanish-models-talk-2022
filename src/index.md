@@ -70,7 +70,7 @@ Perfilado de usuarios por medio de sus mensajes escritos
 Todo lo anterior puede regionalizarse, ya que un mismo lenguaje puede usarse de manera diferente en diferentes regiones.
 @@
 
-La mayoría de los recursos se encuentran para el inglés, y los recursos en español suelen encontrarse en una forma _aglutinada_. \col{blue}{Nuestra **hipótesis** es que para tareas donde haya una fuerte carga regional o el interés sea regional, el uso de recursos regionalizados es provechoso.}
+La mayoría de los recursos se encuentran para el inglés. Los recursos en español suelen encontrarse en una forma _aglutinada_. \col{blue}{Nuestra **hipótesis** es que para tareas dónde haya una fuerte carga cultura o de idiosincrasia el uso de recursos regionalizados es provechoso.}
 
 @@colbox-blue
 Entender las variaciones del lenguaje en las redes sociales es primordial ya que los mensajes suelen ser informales, y es común que los usuarios solo quieran ser leídos por su _círculo_ de personas cercanas.

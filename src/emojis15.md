@@ -33,6 +33,8 @@ algunas regiones se omiten por falta de ejemplos
 ## Resultados
 
 ```julia:emoperf
+#hideall
+using CSV, DataFrames, Latexify, Formatting
 D = CSV.read("emoji15perf.tsv", DataFrame)
 println(latexify(D, latex=false, env=:mdtable, fmt = p -> format(p, commas=true )), " ")
 ```
