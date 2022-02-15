@@ -1,4 +1,4 @@
-@def title = "Análisis comparativo"
+@def title = "Emojis 15"
 
 # Ejemplo de clasificación regional: predicción de emojis
 @@definition

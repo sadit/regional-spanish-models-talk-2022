@@ -59,3 +59,9 @@ h3 {
     padding-top: 2em;
     font-weight: bold;
 }
+
+.franklin-content { padding-left: 5%; padding-right: 5%; }
+
+.franklin-content th, td {
+    padding-left: 0.5em;
+}
