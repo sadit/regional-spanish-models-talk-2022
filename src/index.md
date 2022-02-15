@@ -1,7 +1,7 @@
 @def title = "Spanish language variations in Twitter"
 @def tags = ["Introducción"]
 
-# Variaciones del español en redes sociales (Twitter)
+# Variaciones del lenguaje español en redes sociales (Twitter)
 
 **Eric S. Téllez** -- CONACyT - INFOTEC [email:eric.tellez@ieee.org]()
 
@@ -80,7 +80,7 @@ Entender las variaciones del lenguaje en las redes sociales es primordial ya que
 ## ¿Cómo se ven los mensajes en diferentes regiones?
 
 ### España
-@@example
+@@example-red
 - me dais ascooooikiiikioooooooooooooooooooooooooo
 - kina ñefla
 - ns cmo s exribe
@@ -92,7 +92,7 @@ Entender las variaciones del lenguaje en las redes sociales es primordial ya que
 @@
 
 ### Argentina
-@@example
+@@example-cyan
 - pofr suerxte m8ís amigo mo son psicópatassa
 - pal pinnngooo
 - dios mio no tengo fuerzas😭
@@ -102,7 +102,7 @@ Entender las variaciones del lenguaje en las redes sociales es primordial ya que
 @@
 
 ### México
-@@example
+@@example-green
 - _USR ahora si! #achingarasumadre nefasto, corrupto y ratero, por mucho eres el peor alcalde que ha tenido _USR 
 - ya me ando echando la primera ca** del año
 - _USR acá ya andaban con "la chica que soñé"
