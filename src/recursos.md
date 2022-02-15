@@ -17,7 +17,7 @@ generamos los siguientes recursos modelos.
 ## Estadísticas de los vocabularios
 ```julia:voc-stats
 using CSV, DataFrames, Latexify, Formatting # hide
-D = CSV.read("RegionalSpanish/data/SpanishLang/voc-stats.tsv.gz", DataFrame)
+D = CSV.read("voc-stats.tsv.gz", DataFrame)
 println(latexify(D, latex=false, env=:mdtable, fmt = p -> format(p, commas=true ) * " "))# #hide
 ```
 
@@ -43,7 +43,7 @@ Los emojis son símbolos usados para expresar de manera corta y concisa una carg
 # hideall
 
 using CSV, DataFrames, Latexify, Formatting
-E = CSV.read("RegionalSpanish/data/SpanishLang/emojis.tsv.gz", DataFrame, delim='\t')
+E = CSV.read("emojis.tsv.gz", DataFrame, delim='\t')
 cclist = unique(E.country_code)
 sort!(cclist)
 

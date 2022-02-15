@@ -2,7 +2,7 @@
 # hideall
 
 using CSV, DataFrames, Latexify, Formatting
-E = CSV.read("RegionalSpanish/data/SpanishLang/emojis.tsv.gz", DataFrame, delim='\t')
+E = CSV.read("emojis.tsv.gz", DataFrame, delim='\t')
 cclist = unique(E.country_code)
 sort!(cclist)
 
