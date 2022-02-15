@@ -88,14 +88,12 @@ Entender las variaciones del lenguaje en las redes sociales es primordial ya que
 - q os follennjajabya quisieran
 - en el metro q voy esta potando uno
 - _USR 😂😭💔☹️😰 pero por qué churra
-- m acaban d decir q soy un traidor a la patria
 @@
 
 ### Argentina
 @@example-cyan
 - pofr suerxte m8ís amigo mo son psicópatassa
 - pal pinnngooo
-- dios mio no tengo fuerzas😭
 - _USR estos rompen todo! y la esposa del chorro me tiró en la cara q era planera, 5 hijos tiene. me grita: vos seguí alquilando! decí q no la agarro de los pelos x mi hijo q no le gusta el bardo.
 - y dsp se comió un asado, moooy booeno👌👌🤣😂
 - mi hno se pone re denso no lo banco
@@ -108,5 +106,4 @@ Entender las variaciones del lenguaje en las redes sociales es primordial ya que
 - _USR acá ya andaban con "la chica que soñé"
 - _USR ¿no se te olvidó ponerte calzones rojos hoy, verdad?
 - un minuto de silencio por los que se estan reventando los dedos y las manos con los cohetes !!!
-- me alegra que se quemen los niños en sus fiestas, siempre se le puede echar la culpa a dios, no importa la estupidez humana, todo es culpa de dios ...
 @@
