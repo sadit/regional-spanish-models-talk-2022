@@ -11,9 +11,9 @@ Este es un trabajo en conjunto con _Daniela Moctezuma, Sabino Miranda, Mario Gra
 - Sitio web: [https://ingeotec.github.io/regional-spanish-models/](https://ingeotec.github.io/regional-spanish-models/)
 - Repositorio: [https://github.com/sadit/RegionalSpanish](https://github.com/sadit/RegionalSpanish)
 - A large scale lexical and semantic analysis of Spanish language variations in Twitter: [ArXiv](https://arxiv.org/abs/2110.06128).
-~~~
+<!--
 <div style="font-size: 420px; opacity: 0.2; font-weight: bold; color: rgb(130, 100, 30)">Ñ ñ</div>
-~~~
+-->
 \img{}{https://ingeotec.github.io/regional-spanish-models/fig-region-emo-colors-clustering-umap-3.png}{}{}
 
 ## Sobre esta charla
