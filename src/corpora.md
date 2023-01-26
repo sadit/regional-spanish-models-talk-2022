@@ -47,7 +47,7 @@ Se colectaron mensajes georeferenciados de 2016 a 2019 usando el API de _stream_
 ## Preprocesamiento
 
 @@definition
-Solo se considera Twitter como fuente de datos. Los mensajes con URLs se descartan, lo mismo se hace con retweets y mensajes generados por aplicaciones (e.g., fourth square). Mensajes cortos también se descartan (al menos se debe tener 7 tokens).
+Solo se considera Twitter como fuente de datos. Los mensajes con URLs se descartan, lo mismo se hace con retweets y mensajes generados por aplicaciones (e.g., fourth square). Mensajes muy cortos también se descartan.
 
 @@
 Los mensajes restantes se procesan como sigue:
@@ -56,13 +56,13 @@ Los mensajes restantes se procesan como sigue:
 - minúsculas
 - se remueven las marcas de diacríticos
 - se agrupan hashtags, usuarios y números
-  - números del $1-9$ se mantiene, el resto se representa como $0$
+  - números del $1-9$ se mantienen, el resto se representa como $0$
 - se normalizan repeticiones de símbolos (max. 2)
 - las risas se normalizan (4 letras)
 - las cadenas de puntuaciones se cortan a 3 símbolos
 @@
 
-Los tokens pueden ser palabras, puntuaciones o emojis
+Los tokens pueden ser palabras, puntuaciones o emojis.
 
 ## Ley de Zipf 
 

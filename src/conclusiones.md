@@ -2,7 +2,6 @@
 
 # Conclusiones
 
-## Conclusiones
 - Recursos generados
 - Importancia
 - Beneficios de los recursos regionalizados

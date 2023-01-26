@@ -3,32 +3,51 @@
 
 # Variaciones del lenguaje español en redes sociales (Twitter)
 
-**Eric S. Téllez** -- CONACyT - INFOTEC [email:eric.tellez@ieee.org]()
+**Eric S. Téllez** -- CONACyT - CICESE - INFOTEC [email:eric.tellez@ieee.org]()
 
 
 Este es un trabajo en conjunto con _Daniela Moctezuma, Sabino Miranda, Mario Graff, y Guillermo Ruiz_.
 
-- Sitio web: [https://ingeotec.github.io/regional-spanish-models/](https://ingeotec.github.io/regional-spanish-models/)
-- Repositorio: [https://github.com/sadit/RegionalSpanish](https://github.com/sadit/RegionalSpanish)
-- A large scale lexical and semantic analysis of Spanish language variations in Twitter: [ArXiv](https://arxiv.org/abs/2110.06128).
 <!--
 <div style="font-size: 420px; opacity: 0.2; font-weight: bold; color: rgb(130, 100, 30)">Ñ ñ</div>
 -->
-\img{}{https://ingeotec.github.io/regional-spanish-models/fig-region-emo-colors-clustering-umap-3.png}{}{}
+~~~
+<div>
+<img style="visual: inline;" width="40%" src="https://raw.githubusercontent.com/INGEOTEC/regional-spanish-models/main/figs/fig-colormap-lexical-4.png" />
+</div>
+~~~
+<!--img style="visual: inline;" width="40%" src="https://raw.githubusercontent.com/INGEOTEC/regional-spanish-models/main/figs/fig-lexical-umap-4.png" /-->
+
 
 ## Sobre esta charla
 @@contribution
-En esta charla se muestran nuestros esfuerzos para medir la similitud entre variaciones del lenguaje en la red social Twitter, así como se presentan una serie de recursos regionalizados que se espera sean de utilidad para la creación de modelos de clasificación de texto para tareas cuyo enfoque sea regional.
+En esta charla se muestran esfuerzos para medir la similitud entre variaciones del lenguaje en la red social Twitter, así como una serie de recursos regionalizados. Se espera sean de utilidad para la creación de modelos de clasificación de texto para tareas cuyo enfoque sea regional.
 @@
 
+## Mas información
+- Sitio web: [https://ingeotec.github.io/regional-spanish-models/](https://ingeotec.github.io/regional-spanish-models/)
+- Repositorio: [https://github.com/sadit/RegionalSpanish](https://github.com/INGEOTEC/regional-spanish-models)
+- Regionalized models for Spanish language variations based on Twitter: [ArXiv](https://arxiv.org/abs/2110.06128).
+
+```bibtex
+@misc{https://doi.org/10.48550/arxiv.2110.06128,
+  doi = {10.48550/ARXIV.2110.06128},
+  url = {https://arxiv.org/abs/2110.06128},
+  author = {Tellez, Eric S. and Moctezuma, Daniela and Miranda, Sabino and Graff, Mario and Ruiz, Guillermo},
+  keywords = {Computation and Language (cs.CL), Computers and Society (cs.CY), Social and Information Networks (cs.SI), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  title = {Regionalized models for Spanish language variations based on Twitter},
+  publisher = {arXiv},
+  year = {2021},
+  copyright = {Creative Commons Attribution 4.0 International}
+}
+```
+
+¡Acaba de aceptarse en la revista _Linguistic resources and evaluation_ de Springer!.
 
 ## Problema 1
-
 Entender el lenguaje y los mensajes escritos en redes sociales.
 
 @@definition
-
-### Tareas relacionadas
 - **Minería de opinión** (análisis de sentimiento)
   - ~~~<span style="color: rgb(0, 0, 255);">positivo :) </span>~~~
   - ~~~<span style="color: rgb(130, 130, 130);">neutro :) </span>~~~
@@ -39,7 +58,6 @@ Entender el lenguaje y los mensajes escritos en redes sociales.
 - **Identificación de lenguaje de odio**
 - Etc.
 @@
-
 
 ## Problema 2
 Perfilado de usuarios por medio de sus mensajes escritos

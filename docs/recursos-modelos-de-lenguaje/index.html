@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+   <link rel="stylesheet" href="/regional-spanish-models-talk-2022/libs/highlight/github.min.css">
+   
+
+  <link href="/regional-spanish-models-talk-2022/css/franklin.css" rel="stylesheet">
+<link href="/regional-spanish-models-talk-2022/css/vela.css" rel="stylesheet">
+<link href="/regional-spanish-models-talk-2022/css/mystyle.css" rel="stylesheet">
+
+<script src="/regional-spanish-models-talk-2022/libs/vela/jquery.min.js"></script>
+
+<link rel="icon" href="/regional-spanish-models-talk-2022/assets/favicon.png">
+
+
+  <title>Regional Spanish Models</title>
+</head>
+<body>
+<div class="main-nav slideout-menu slideout-menu-left" id="menu">
+  <div class="flex-container">
+    <span class="sidebar-brand">
+      <h3 style='font-size: 20px; padding: 1em;'>Regional Spanish Resources</h3>
+    </span>
+  </div> <!-- class="flex-container" -->
+
+  <nav class="sidebar-nav">
+    <ul class="metismenu" id="metismenu" >
+      <li><a href="/regional-spanish-models-talk-2022/index.html">Introducción</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/corpora/">Corpus</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/recursos-lexicos/">Recursos léxicos</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/recursos-semanticos/">Word embeddings</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/recursos-modelos-de-lenguaje/">Modelos de lenguaje</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/conclusiones/">Conclusiones y trabajo a futuro</a></li>
+    </ul>
+  </nav>
+
+  <span class="sidebar-brand">
+    <h3 style='font-size: 20px; padding: 1em;'>
+  <strong>Eric S. Téllez</strong> – CONACyT - CICESE - INFOTEC <a href="">email:eric.tellez@ieee.org</a>
+  </h3>
+  </span>
+
+</div> <!-- main nav menu -->
+
+<main id="panel" class="slidout-panel slideout-panel-left">
+  <div class="toggle-button hamburger hamburger--spin">
+    <div class="hamburger-box">
+      <div class="hamburger-inner"></div>
+    </div>
+  </div>
+  <h1 class="page title">Language models</h1>
+  <hr>
+
+
+
+<!-- Content appended here -->
+<div class="franklin-content"><h1 id="modelos_de_lenguaje"><a href="#modelos_de_lenguaje" class="header-anchor">Modelos de lenguaje</a></h1>
+<ul>
+<li><p><a href="https://ingeotec.github.io/regional-spanish-models/">Recursos</a></p>
+</li>
+<li><p><a href="https://github.com/INGEOTEC/regional-spanish-models">Repositorio</a></p>
+</li>
+</ul>
+<h2 id="modelos_semanticos_word-embeddings_regionales_fasttext"><a href="#modelos_semanticos_word-embeddings_regionales_fasttext" class="header-anchor">Modelos semanticos: <em>word-embeddings</em> regionales &#40;fastText&#41;</a></h2>
+<div class="definition">Más allá de la información léxica, es posible obtener información semántica. Para esto hacemos uso de modelos que capturan la <em>semántica distribucional</em> de las palabras. En particular, creamos embeddings de <a href="https://fasttext.cc/">fastText</a> usando las colecciones divididas por país. Creamos word embeddings para datos separados por región y uno que aglutina los datos de todas las regiones &#40;27 modelos, 300d&#41;.</div>
+<div class="warn">Por si mismo esto ya nos permité realizar modelos clustering y clasificación, o realizar búsquedas semánticas. Pero caben preguntas sobre la bondad de los modelos regionales, o si es mejor usar modelos que aglutinan datos.</div>
+<h2 id="emoji-15_predicción_de_emojis_ejemplo_de_clasificación_regional"><a href="#emoji-15_predicción_de_emojis_ejemplo_de_clasificación_regional" class="header-anchor">Emoji-15: predicción de emojis, ejemplo de clasificación regional</a></h2>
+<div class="definition"><strong>Tarea:</strong> Predicción emojis que podrían estar asociados a un mensaje</div>
+<div class="warn"><ul>
+<li><p>Tomamos mensajes georeferenciados enero-febrero 2020</p>
+</li>
+<li><p>Seleccionamos los emoji objetivos entre los más populares en español: 🥺, ❤, 👌, 👏, 💔, 😄, 😊, 😌, 😍, 😒, 😘, 😡, 😢, 😭, 🤔</p>
+</li>
+<li><p>Para cada región seleccionamos mensajes con solo uno de estos emoji</p>
+</li>
+<li><p>El emoji en cuestión se reemplaza por la cadena <code>_emo</code> y se usa como etiqueta</p>
+</li>
+<li><p>Partición 50-50 por cada región, se reporta micro recall</p>
+</li>
+<li><p>Usamos fastText supevisado con cada uno de los modelos regionales como preentrenados – all vs all</p>
+</li>
+</ul></div>
+
+<p>distribución de ejemplos por región &#40;train&#41;</p>
+<table><tr><th align="right">emoji</th><th align="right">AR</th><th align="right">BR</th><th align="right">CA</th><th align="right">CL</th><th align="right">CO</th><th align="right">CR</th><th align="right">CU</th><th align="right">DO</th><th align="right">EC</th><th align="right">ES</th><th align="right">FR</th><th align="right">GB</th><th align="right">GT</th><th align="right">HN</th><th align="right">MX</th><th align="right">NI</th><th align="right">PA</th><th align="right">PE</th><th align="right">PY</th><th align="right">SV</th><th align="right">US</th><th align="right">UY</th><th align="right">VE</th></tr><tr><td align="right">🥺</td><td align="right">3,749</td><td align="right">275</td><td align="right">158</td><td align="right">1,263</td><td align="right">4,760</td><td align="right">425</td><td align="right">26</td><td align="right">458</td><td align="right">745</td><td align="right">2,640</td><td align="right">53</td><td align="right">95</td><td align="right">666</td><td align="right">708</td><td align="right">10,160</td><td align="right">736</td><td align="right">827</td><td align="right">739</td><td align="right">684</td><td align="right">278</td><td align="right">2,536</td><td align="right">446</td><td align="right">359</td></tr><tr><td align="right">❤</td><td align="right">18,454</td><td align="right">1,775</td><td align="right">124</td><td align="right">2,911</td><td align="right">6,237</td><td align="right">821</td><td align="right">41</td><td align="right">348</td><td align="right">1,123</td><td align="right">8,394</td><td align="right">153</td><td align="right">255</td><td align="right">653</td><td align="right">609</td><td align="right">9,508</td><td align="right">491</td><td align="right">880</td><td align="right">968</td><td align="right">1,800</td><td align="right">219</td><td align="right">3,216</td><td align="right">1,478</td><td align="right">784</td></tr><tr><td align="right">👌</td><td align="right">2,114</td><td align="right">92</td><td align="right">34</td><td align="right">1,016</td><td align="right">1,455</td><td align="right">242</td><td align="right">20</td><td align="right">167</td><td align="right">253</td><td align="right">1,825</td><td align="right">41</td><td align="right">58</td><td align="right">376</td><td align="right">157</td><td align="right">2,754</td><td align="right">159</td><td align="right">313</td><td align="right">160</td><td align="right">666</td><td align="right">124</td><td align="right">597</td><td align="right">190</td><td align="right">71</td></tr><tr><td align="right">👏</td><td align="right">6,785</td><td align="right">433</td><td align="right">80</td><td align="right">2,995</td><td align="right">2,486</td><td align="right">159</td><td align="right">33</td><td align="right">369</td><td align="right">886</td><td align="right">7,061</td><td align="right">64</td><td align="right">105</td><td align="right">197</td><td align="right">159</td><td align="right">4,175</td><td align="right">52</td><td align="right">388</td><td align="right">577</td><td align="right">761</td><td align="right">222</td><td align="right">1,281</td><td align="right">1,248</td><td align="right">530</td></tr><tr><td align="right">💔</td><td align="right">4,278</td><td align="right">100</td><td align="right">28</td><td align="right">390</td><td align="right">1,407</td><td align="right">161</td><td align="right">7</td><td align="right">123</td><td align="right">200</td><td align="right">1,164</td><td align="right">26</td><td align="right">37</td><td align="right">134</td><td align="right">91</td><td align="right">1,438</td><td align="right">105</td><td align="right">260</td><td align="right">115</td><td align="right">428</td><td align="right">31</td><td align="right">667</td><td align="right">283</td><td align="right">142</td></tr><tr><td align="right">😄</td><td align="right">798</td><td align="right">26</td><td align="right">8</td><td align="right">301</td><td align="right">300</td><td align="right">42</td><td align="right">3</td><td align="right">56</td><td align="right">83</td><td align="right">776</td><td align="right">4</td><td align="right">18</td><td align="right">48</td><td align="right">48</td><td align="right">549</td><td align="right">17</td><td align="right">58</td><td align="right">115</td><td align="right">92</td><td align="right">53</td><td align="right">192</td><td align="right">85</td><td align="right">120</td></tr><tr><td align="right">😊</td><td align="right">3,609</td><td align="right">105</td><td align="right">35</td><td align="right">1,803</td><td align="right">1,475</td><td align="right">171</td><td align="right">32</td><td align="right">175</td><td align="right">364</td><td align="right">3,827</td><td align="right">74</td><td align="right">56</td><td align="right">257</td><td align="right">129</td><td align="right">3,395</td><td align="right">115</td><td align="right">236</td><td align="right">817</td><td align="right">369</td><td align="right">192</td><td align="right">829</td><td align="right">377</td><td align="right">293</td></tr><tr><td align="right">😌</td><td align="right">1,184</td><td align="right">70</td><td align="right">30</td><td align="right">827</td><td align="right">986</td><td align="right">132</td><td align="right">44</td><td align="right">280</td><td align="right">238</td><td align="right">1,017</td><td align="right">23</td><td align="right">23</td><td align="right">123</td><td align="right">163</td><td align="right">2,011</td><td align="right">151</td><td align="right">293</td><td align="right">248</td><td align="right">377</td><td align="right">78</td><td align="right">608</td><td align="right">167</td><td align="right">110</td></tr><tr><td align="right">😍</td><td align="right">15,999</td><td align="right">932</td><td align="right">111</td><td align="right">2,190</td><td align="right">6,824</td><td align="right">510</td><td align="right">28</td><td align="right">509</td><td align="right">837</td><td align="right">8,000</td><td align="right">107</td><td align="right">136</td><td align="right">491</td><td align="right">514</td><td align="right">8,711</td><td align="right">341</td><td align="right">1,010</td><td align="right">999</td><td align="right">1,996</td><td align="right">268</td><td align="right">2,232</td><td align="right">1,194</td><td align="right">686</td></tr><tr><td align="right">😒</td><td align="right">3,081</td><td align="right">89</td><td align="right">24</td><td align="right">920</td><td align="right">1,718</td><td align="right">155</td><td align="right">50</td><td align="right">316</td><td align="right">291</td><td align="right">780</td><td align="right">18</td><td align="right">22</td><td align="right">163</td><td align="right">124</td><td align="right">2,185</td><td align="right">175</td><td align="right">322</td><td align="right">213</td><td align="right">259</td><td align="right">127</td><td align="right">738</td><td align="right">359</td><td align="right">236</td></tr><tr><td align="right">😘</td><td align="right">5,935</td><td align="right">211</td><td align="right">70</td><td align="right">1,764</td><td align="right">1,482</td><td align="right">98</td><td align="right">29</td><td align="right">119</td><td align="right">347</td><td align="right">10,785</td><td align="right">203</td><td align="right">99</td><td align="right">171</td><td align="right">72</td><td align="right">4,290</td><td align="right">63</td><td align="right">136</td><td align="right">374</td><td align="right">190</td><td align="right">181</td><td align="right">1,808</td><td align="right">719</td><td align="right">493</td></tr><tr><td align="right">😡</td><td align="right">2,777</td><td align="right">136</td><td align="right">60</td><td align="right">1,098</td><td align="right">1,412</td><td align="right">150</td><td align="right">5</td><td align="right">110</td><td align="right">291</td><td align="right">1,320</td><td align="right">12</td><td align="right">25</td><td align="right">158</td><td align="right">52</td><td align="right">2,428</td><td align="right">59</td><td align="right">155</td><td align="right">227</td><td align="right">250</td><td align="right">90</td><td align="right">769</td><td align="right">301</td><td align="right">252</td></tr><tr><td align="right">😢</td><td align="right">2,144</td><td align="right">89</td><td align="right">38</td><td align="right">699</td><td align="right">1,039</td><td align="right">153</td><td align="right">8</td><td align="right">102</td><td align="right">296</td><td align="right">1,507</td><td align="right">31</td><td align="right">39</td><td align="right">151</td><td align="right">129</td><td align="right">2,646</td><td align="right">131</td><td align="right">204</td><td align="right">271</td><td align="right">239</td><td align="right">69</td><td align="right">781</td><td align="right">227</td><td align="right">135</td></tr><tr><td align="right">😭</td><td align="right">13,873</td><td align="right">436</td><td align="right">125</td><td align="right">1,967</td><td align="right">4,461</td><td align="right">581</td><td align="right">25</td><td align="right">604</td><td align="right">787</td><td align="right">3,935</td><td align="right">157</td><td align="right">135</td><td align="right">388</td><td align="right">364</td><td align="right">6,752</td><td align="right">321</td><td align="right">1,057</td><td align="right">979</td><td align="right">1,832</td><td align="right">200</td><td align="right">2,799</td><td align="right">939</td><td align="right">530</td></tr><tr><td align="right">🤔</td><td align="right">6,751</td><td align="right">275</td><td align="right">154</td><td align="right">2,756</td><td align="right">4,173</td><td align="right">440</td><td align="right">47</td><td align="right">614</td><td align="right">771</td><td align="right">4,781</td><td align="right">99</td><td align="right">111</td><td align="right">421</td><td align="right">339</td><td align="right">7,380</td><td align="right">211</td><td align="right">741</td><td align="right">1,135</td><td align="right">937</td><td align="right">384</td><td align="right">1,941</td><td align="right">951</td><td align="right">734</td></tr></table>
+
+<p>algunas regiones se omiten por falta de ejemplos</p>
+<h3 id="resultados"><a href="#resultados" class="header-anchor">Resultados</a></h3>
+
+<table><tr><th align="right">cc</th><th align="right">minrecall</th><th align="right">maxrecall</th><th align="right">localrank</th><th align="right">top5</th></tr><tr><td align="right">AR</td><td align="right">0.4777</td><td align="right">0.49</td><td align="right">3</td><td align="right">UY,PY,AR,PE,CO</td></tr><tr><td align="right">BR</td><td align="right">0.4611</td><td align="right">0.4879</td><td align="right">1</td><td align="right">BR,ALL,DO,PY,CR</td></tr><tr><td align="right">CA</td><td align="right">0.2934</td><td align="right">0.3533</td><td align="right">18</td><td align="right">CL,ALL,CO,MX,US</td></tr><tr><td align="right">CL</td><td align="right">0.4257</td><td align="right">0.4494</td><td align="right">1</td><td align="right">CL,US,MX,AR,ES</td></tr><tr><td align="right">CO</td><td align="right">0.4247</td><td align="right">0.4365</td><td align="right">2</td><td align="right">US,CO,VE,EC,GT</td></tr><tr><td align="right">CR</td><td align="right">0.3689</td><td align="right">0.388</td><td align="right">9</td><td align="right">US,VE,ALL,MX,CO</td></tr><tr><td align="right">DO</td><td align="right">0.3383</td><td align="right">0.3813</td><td align="right">13</td><td align="right">US,CO,VE,CL,ALL</td></tr><tr><td align="right">EC</td><td align="right">0.3797</td><td align="right">0.4138</td><td align="right">9</td><td align="right">MX,US,CL,ALL,CO</td></tr><tr><td align="right">ES</td><td align="right">0.4754</td><td align="right">0.4855</td><td align="right">1</td><td align="right">ES,AR,MX,US,VE</td></tr><tr><td align="right">FR</td><td align="right">0.4187</td><td align="right">0.4424</td><td align="right">4</td><td align="right">ALL,GT,EC,FR,PA</td></tr><tr><td align="right">GB</td><td align="right">0.3467</td><td align="right">0.3756</td><td align="right">23</td><td align="right">ALL,AR,ES,VE,MX</td></tr><tr><td align="right">GT</td><td align="right">0.3489</td><td align="right">0.3882</td><td align="right">13</td><td align="right">MX,US,ALL,CO,ES</td></tr><tr><td align="right">HN</td><td align="right">0.3354</td><td align="right">0.3671</td><td align="right">18</td><td align="right">PE,EC,BR,CR,UY</td></tr><tr><td align="right">MX</td><td align="right">0.4233</td><td align="right">0.4335</td><td align="right">1</td><td align="right">MX,GT,CR,US,CO</td></tr><tr><td align="right">NI</td><td align="right">0.3372</td><td align="right">0.3718</td><td align="right">18</td><td align="right">VE,CO,CL,MX,US</td></tr><tr><td align="right">PA</td><td align="right">0.3658</td><td align="right">0.3927</td><td align="right">10</td><td align="right">US,CL,VE,CO,PE</td></tr><tr><td align="right">PE</td><td align="right">0.3799</td><td align="right">0.4196</td><td align="right">9</td><td align="right">MX,ALL,US,AR,CO</td></tr><tr><td align="right">PY</td><td align="right">0.4244</td><td align="right">0.4417</td><td align="right">1</td><td align="right">PY,US,BR,PE,UY</td></tr><tr><td align="right">SV</td><td align="right">0.3226</td><td align="right">0.3954</td><td align="right">18</td><td align="right">US,CO,MX,CL,VE</td></tr><tr><td align="right">US</td><td align="right">0.4041</td><td align="right">0.4244</td><td align="right">1</td><td align="right">US,MX,CO,ES,CL</td></tr><tr><td align="right">UY</td><td align="right">0.4351</td><td align="right">0.4572</td><td align="right">1</td><td align="right">UY,US,CO,CL,VE</td></tr><tr><td align="right">VE</td><td align="right">0.3848</td><td align="right">0.4338</td><td align="right">4</td><td align="right">MX,CO,ES,VE,US</td></tr></table>
+
+<pre><code class="language-julia">@show describe&#40;D.localrank&#41;</code></pre><pre><code class="plaintext code-output">Summary Stats:
+Length:         22
+Missing Count:  0
+Mean:           8.090909
+Minimum:        1.000000
+1st Quartile:   1.000000
+Median:         6.500000
+3rd Quartile:   13.000000
+Maximum:        23.000000
+Type:           Int64
+describe(D.localrank) = nothing
+</code></pre>
+<h3 id="promedio_de_ranks_-_qué_tan_bueno_es_cada_modelo"><a href="#promedio_de_ranks_-_qué_tan_bueno_es_cada_modelo" class="header-anchor">Promedio de ranks - qué tan bueno es cada modelo</a></h3>
+<h4 id="apariciones_en_el_top-5"><a href="#apariciones_en_el_top-5" class="header-anchor">Apariciones en el top-5</a></h4>
+<table><tr><th align="right">cc</th><th align="right">freq</th></tr><tr><td align="right">US</td><td align="right">17</td></tr><tr><td align="right">CO</td><td align="right">15</td></tr><tr><td align="right">MX</td><td align="right">13</td></tr><tr><td align="right">VE</td><td align="right">10</td></tr><tr><td align="right">ALL</td><td align="right">9</td></tr><tr><td align="right">CL</td><td align="right">9</td></tr><tr><td align="right">ES</td><td align="right">6</td></tr><tr><td align="right">AR</td><td align="right">5</td></tr></table>
+<p>...</p>
+<h4 id="average_rank_de_modelos"><a href="#average_rank_de_modelos" class="header-anchor">average rank de modelos</a></h4>
+<table><tr><th align="center">model</th><th align="right">voc-size</th><th align="right">avg. model rank</th></tr><tr><td align="center">US</td><td align="right">292,465</td><td align="right">4.23</td></tr><tr><td align="center">CO</td><td align="right">324,635</td><td align="right">6.05</td></tr><tr><td align="center">MX</td><td align="right">438,136</td><td align="right">6.27</td></tr><tr><td align="center">CL</td><td align="right">282,737</td><td align="right">6.91</td></tr><tr><td align="center">VE</td><td align="right">271,924</td><td align="right">7.0</td></tr><tr><td align="center">ALL</td><td align="right">1,696,232</td><td align="right">8.45</td></tr><tr><td align="center">PE</td><td align="right">178,113</td><td align="right">8.64</td></tr><tr><td align="center">UY</td><td align="right">200,032</td><td align="right">8.73</td></tr><tr><td align="center">EC</td><td align="right">147,560</td><td align="right">8.95</td></tr><tr><td align="center">AR</td><td align="right">673,424</td><td align="right">9.41</td></tr><tr><td align="center">ES</td><td align="right">571,196</td><td align="right">10.95</td></tr><tr><td align="center">PY</td><td align="right">124,162</td><td align="right">11.14</td></tr><tr><td align="center">BR</td><td align="right">127,205</td><td align="right">11.27</td></tr><tr><td align="center">CR</td><td align="right">103,086</td><td align="right">12.5</td></tr><tr><td align="center">PA</td><td align="right">111,635</td><td align="right">13.36</td></tr><tr><td align="center">GT</td><td align="right">95,252</td><td align="right">13.64</td></tr><tr><td align="center">DO</td><td align="right">108,655</td><td align="right">14.91</td></tr><tr><td align="center">GB</td><td align="right">82,418</td><td align="right">18.0</td></tr><tr><td align="center">NI</td><td align="right">68,605</td><td align="right">18.18</td></tr><tr><td align="center">FR</td><td align="right">69,843</td><td align="right">18.91</td></tr><tr><td align="center">CA</td><td align="right">63,161</td><td align="right">19.0</td></tr><tr><td align="center">SV</td><td align="right">73,833</td><td align="right">19.14</td></tr><tr><td align="center">HN</td><td align="right">60,580</td><td align="right">20.36</td></tr></table>
+<div class="warn">Llegados a este punto deberíamos tener cierta idea de la bondad de los modelos semánticos regionalizados, sin embargo, hay problemas en las distribuciones de los datos, algunas regiones tienen corpus enormes mientras que otros son relativamente pequeños. ¿Qué hacer?</div>
+<h1 id="similitud_entre_regiones"><a href="#similitud_entre_regiones" class="header-anchor">Similitud entre regiones</a></h1>
+<div style="; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="https://raw.githubusercontent.com/sadit/RegionalSpanish/main/figs/fig-common-tokens-per-region.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<div style="text-align: center; width: 100%;"> Tokens comunes: ¿En cuántas regiones aparece un token?</div>
+</div>
+<div style="; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="https://github.com/INGEOTEC/regional-spanish-models/raw/main/figs/fig-common-words-semantic-affinity-matrix.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<div style="text-align: center; width: 100%;"> Matriz de afinidad por embeddings</div>
+</div>
+<div style="; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="https://raw.githubusercontent.com/sadit/RegionalSpanish/main/figs/fig-voc-semantic-umap-4.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<div style="text-align: center; width: 100%;"> Similitudes -- UMAP</div>
+</div>
+<div style="; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="https://github.com/INGEOTEC/regional-spanish-models/raw/main/figs/fig-colormap-common-voc-semantic-4.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<div style="text-align: center; width: 100%;"> Mapa colorizado con la proyección semántica 3D</div>
+</div>
+<h1 id="modelos_de_lenguaje_regionalizados"><a href="#modelos_de_lenguaje_regionalizados" class="header-anchor">Modelos de lenguaje regionalizados</a></h1>
+<p>BERT &#40;Bidirectional Encoder Representations from Transformers&#41; regionales</p>
+<div class="warn">en construcción&#33;...</div>
+
+  <div style="width: 100%; background-color: rgb(229, 195, 182); border: solid rgb(36, 36, 37)  1px; padding: 0.5em; margin-top: 1em; text-align: center;">
+    <span> <a href="/regional-spanish-models-talk-2022/index.html">Introducción</a></span> -
+    <span> <a href="/regional-spanish-models-talk-2022/corpora/">Corpus</a></span> -
+    <span><a href="/regional-spanish-models-talk-2022/recursos-lexicos/">Recursos léxicos</a></span> -
+    <span><a href="/regional-spanish-models-talk-2022/recursos-semanticos/">Word embeddings</a></span> -
+    <span><a href="/regional-spanish-models-talk-2022/recursos-modelos-de-lenguaje/">Modelos de lenguaje</a></span> -
+    <span> <a href="/regional-spanish-models-talk-2022/conclusiones/">Conclusiones</a></span>
+  </div>
+
+<div class="page-foot">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> Eric S. Tellez <eric.tellez@infotec.mx>. Last modified: January 25, 2023.
+    Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+</div>
+</div><!-- CONTENT ENDS HERE -->
+  </main> <!-- end of id=main -->
+  <script src="/regional-spanish-models-talk-2022/libs/vela/metisMenu.min.js"></script>
+  <script src="/regional-spanish-models-talk-2022/libs/vela/slideout.min.js"></script>
+  
+  
+    <script src="/regional-spanish-models-talk-2022/libs/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();hljs.configure({tabReplace: '    '});</script>
+
+  
+  
+</body>
+</html>

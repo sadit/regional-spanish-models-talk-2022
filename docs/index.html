@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  
+   <link rel="stylesheet" href="/regional-spanish-models-talk-2022/libs/highlight/github.min.css">
+   
 
   <link href="/regional-spanish-models-talk-2022/css/franklin.css" rel="stylesheet">
 <link href="/regional-spanish-models-talk-2022/css/vela.css" rel="stylesheet">
@@ -21,7 +22,7 @@
 <div class="main-nav slideout-menu slideout-menu-left" id="menu">
   <div class="flex-container">
     <span class="sidebar-brand">
-      <h3 style='font-size: 20px; padding: 1em;'>Regional Spanish</h3>
+      <h3 style='font-size: 20px; padding: 1em;'>Regional Spanish Resources</h3>
     </span>
   </div> <!-- class="flex-container" -->
 
@@ -29,16 +30,16 @@
     <ul class="metismenu" id="metismenu" >
       <li><a href="/regional-spanish-models-talk-2022/index.html">Introducción</a></li>
       <li><a href="/regional-spanish-models-talk-2022/corpora/">Corpus</a></li>
-      <li><a href="/regional-spanish-models-talk-2022/recursos/">Recursos</a></li>
-      <li><a href="/regional-spanish-models-talk-2022/emojis15/">Emojis-15</a></li>
-      <li><a href="/regional-spanish-models-talk-2022/analisis/">Análisis</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/recursos-lexicos/">Recursos léxicos</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/recursos-semanticos/">Word embeddings</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/recursos-modelos-de-lenguaje/">Modelos de lenguaje</a></li>
       <li><a href="/regional-spanish-models-talk-2022/conclusiones/">Conclusiones y trabajo a futuro</a></li>
     </ul>
   </nav>
 
   <span class="sidebar-brand">
     <h3 style='font-size: 20px; padding: 1em;'>
-  <strong>Eric S. Téllez</strong> – CONACyT - INFOTEC <a href="">email:eric.tellez@ieee.org</a>
+  <strong>Eric S. Téllez</strong> – CONACyT - CICESE - INFOTEC <a href="">email:eric.tellez@ieee.org</a>
   </h3>
   </span>
 
@@ -57,25 +58,38 @@
 
 <!-- Content appended here -->
 <div class="franklin-content"><h1 id="variaciones_del_lenguaje_español_en_redes_sociales_twitter"><a href="#variaciones_del_lenguaje_español_en_redes_sociales_twitter" class="header-anchor">Variaciones del lenguaje español en redes sociales &#40;Twitter&#41;</a></h1>
-<p><strong>Eric S. Téllez</strong> – CONACyT - INFOTEC <a href="">email:eric.tellez@ieee.org</a></p>
+<p><strong>Eric S. Téllez</strong> – CONACyT - CICESE - INFOTEC <a href="">email:eric.tellez@ieee.org</a></p>
 <p>Este es un trabajo en conjunto con <em>Daniela Moctezuma, Sabino Miranda, Mario Graff, y Guillermo Ruiz</em>.</p>
+
+<div>
+<img style="visual: inline;" width="40%" src="https://raw.githubusercontent.com/INGEOTEC/regional-spanish-models/main/figs/fig-colormap-lexical-4.png" />
+</div>
+
+<h2 id="sobre_esta_charla"><a href="#sobre_esta_charla" class="header-anchor">Sobre esta charla</a></h2>
+<div class="contribution">En esta charla se muestran esfuerzos para medir la similitud entre variaciones del lenguaje en la red social Twitter, así como una serie de recursos regionalizados. Se espera sean de utilidad para la creación de modelos de clasificación de texto para tareas cuyo enfoque sea regional.</div>
+<h2 id="mas_información"><a href="#mas_información" class="header-anchor">Mas información</a></h2>
 <ul>
 <li><p>Sitio web: <a href="https://ingeotec.github.io/regional-spanish-models/">https://ingeotec.github.io/regional-spanish-models/</a></p>
 </li>
-<li><p>Repositorio: <a href="https://github.com/sadit/RegionalSpanish">https://github.com/sadit/RegionalSpanish</a></p>
+<li><p>Repositorio: <a href="https://github.com/INGEOTEC/regional-spanish-models">https://github.com/sadit/RegionalSpanish</a></p>
 </li>
-<li><p>A large scale lexical and semantic analysis of Spanish language variations in Twitter: <a href="https://arxiv.org/abs/2110.06128">ArXiv</a>.</p>
+<li><p>Regionalized models for Spanish language variations based on Twitter: <a href="https://arxiv.org/abs/2110.06128">ArXiv</a>.</p>
 </li>
 </ul>
-<div style="; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="https://ingeotec.github.io/regional-spanish-models/fig-region-emo-colors-clustering-umap-3.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
-<div style="text-align: center; width: 100%;"> </div>
-</div>
-<h2 id="sobre_esta_charla"><a href="#sobre_esta_charla" class="header-anchor">Sobre esta charla</a></h2>
-<div class="contribution">En esta charla se muestran nuestros esfuerzos para medir la similitud entre variaciones del lenguaje en la red social Twitter, así como se presentan una serie de recursos regionalizados que se espera sean de utilidad para la creación de modelos de clasificación de texto para tareas cuyo enfoque sea regional.</div>
+<pre><code class="language-bibtex">@misc&#123;https://doi.org/10.48550/arxiv.2110.06128,
+  doi &#61; &#123;10.48550/ARXIV.2110.06128&#125;,
+  url &#61; &#123;https://arxiv.org/abs/2110.06128&#125;,
+  author &#61; &#123;Tellez, Eric S. and Moctezuma, Daniela and Miranda, Sabino and Graff, Mario and Ruiz, Guillermo&#125;,
+  keywords &#61; &#123;Computation and Language &#40;cs.CL&#41;, Computers and Society &#40;cs.CY&#41;, Social and Information Networks &#40;cs.SI&#41;, FOS: Computer and information sciences, FOS: Computer and information sciences&#125;,
+  title &#61; &#123;Regionalized models for Spanish language variations based on Twitter&#125;,
+  publisher &#61; &#123;arXiv&#125;,
+  year &#61; &#123;2021&#125;,
+  copyright &#61; &#123;Creative Commons Attribution 4.0 International&#125;
+&#125;</code></pre>
+<p>¡Acaba de aceptarse en la revista <em>Linguistic resources and evaluation</em> de Springer&#33;.</p>
 <h2 id="problema_1"><a href="#problema_1" class="header-anchor">Problema 1</a></h2>
 <p>Entender el lenguaje y los mensajes escritos en redes sociales.</p>
-<div class="definition"><h3 id="tareas_relacionadas"><a href="#tareas_relacionadas" class="header-anchor">Tareas relacionadas</a></h3>
-<ul>
+<div class="definition"><ul>
 <li><p><strong>Minería de opinión</strong> &#40;análisis de sentimiento&#41;</p>
 <ul>
 <li><p><span style="color: rgb(0, 0, 255);">positivo :) </span></p>
@@ -180,14 +194,14 @@
   <div style="width: 100%; background-color: rgb(229, 195, 182); border: solid rgb(36, 36, 37)  1px; padding: 0.5em; margin-top: 1em; text-align: center;">
     <span> <a href="/regional-spanish-models-talk-2022/index.html">Introducción</a></span> -
     <span> <a href="/regional-spanish-models-talk-2022/corpora/">Corpus</a></span> -
-    <span> <a href="/regional-spanish-models-talk-2022/recursos/">Recursos</a></span> -
-    <span> <a href="/regional-spanish-models-talk-2022/emojis15/">Emojis-15</a></span> -
-    <span> <a href="/regional-spanish-models-talk-2022/analisis/">Análisis</a></span> -
+    <span><a href="/regional-spanish-models-talk-2022/recursos-lexicos/">Recursos léxicos</a></span> -
+    <span><a href="/regional-spanish-models-talk-2022/recursos-semanticos/">Word embeddings</a></span> -
+    <span><a href="/regional-spanish-models-talk-2022/recursos-modelos-de-lenguaje/">Modelos de lenguaje</a></span> -
     <span> <a href="/regional-spanish-models-talk-2022/conclusiones/">Conclusiones</a></span>
   </div>
 
 <div class="page-foot">
-    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> Eric S. Tellez <eric.tellez@infotec.mx>. Last modified: March 28, 2022.
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> Eric S. Tellez <eric.tellez@infotec.mx>. Last modified: January 24, 2023.
     Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
 </div>
 </div><!-- CONTENT ENDS HERE -->
@@ -195,6 +209,10 @@
   <script src="/regional-spanish-models-talk-2022/libs/vela/metisMenu.min.js"></script>
   <script src="/regional-spanish-models-talk-2022/libs/vela/slideout.min.js"></script>
   
+  
+    <script src="/regional-spanish-models-talk-2022/libs/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();hljs.configure({tabReplace: '    '});</script>
+
   
   
 </body>

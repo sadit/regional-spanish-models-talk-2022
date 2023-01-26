@@ -1,30 +1,103 @@
-| country_code |           n |    rawvoc |       voc |
-| ------------:| -----------:| ---------:| ---------:|
-|           AR | 129,774,176 | 3,302,464 |   669,745 |
-|           BO |     487,696 |   156,017 |    46,655 |
-|           BR |   3,823,792 |   594,117 |   125,785 |
-|           CA |     755,740 |   235,676 |    62,645 |
-|           CL |  22,364,784 | 1,252,438 |   281,290 |
-|           CO |  32,709,838 | 1,444,233 |   322,982 |
-|           CR |   3,811,036 |   339,908 |   102,446 |
-|           CU |     106,966 |    70,257 |    18,496 |
-|           DO |   3,157,663 |   387,205 |   108,063 |
-|           EC |   6,274,530 |   558,427 |   146,726 |
-|           ES |  62,624,884 | 2,773,605 |   567,617 |
-|           FR |     870,545 |   281,532 |    69,216 |
-|           GB |   1,214,321 |   316,173 |    81,686 |
-|           GQ |       3,217 |     9,128 |     1,110 |
-|           GT |   2,676,950 |   324,107 |    94,744 |
-|           HN |   1,119,389 |   198,786 |    60,193 |
-|           MX |  55,815,815 | 2,017,737 |   435,915 |
-|           NI |   1,737,769 |   223,418 |    68,230 |
-|           PA |   3,189,107 |   410,215 |   111,065 |
-|           PE |   8,047,752 |   720,045 |   177,080 |
-|           PR |     217,665 |    84,434 |    22,858 |
-|           PY |   4,758,976 |   450,555 |   123,447 |
-|           SV |   1,416,610 |   247,206 |    73,407 |
-|           US |  17,145,808 | 1,263,567 |   290,631 |
-|           UY |  15,894,226 |   802,633 |   199,000 |
-|           VE |  17,641,612 | 1,250,630 |   270,561 |
-|          ALL | 397,640,867 | 1,268,420 | 1,268,420 |
+|        token |        occs |       ndocs |    weight | n_regions |                                                                 country_codes |
+| ------------:| -----------:| -----------:| ---------:| ---------:| -----------------------------------------------------------------------------:|
+|       fueron |   1,007,329 |     986,267 |  8.655272 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|            , | 198,582,423 | 133,250,538 |  1.577325 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|        salir |   2,821,137 |   2,755,970 |  7.172762 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|         pero |  29,588,164 |  28,784,422 |  3.788106 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|       dormir |   3,754,460 |   3,646,554 |  6.768788 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|          las |  35,857,087 |  32,046,472 |  3.633228 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|         chau |     409,398 |     387,910 | 10.001527 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|       siento |   2,830,971 |   2,764,088 |  7.168519 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|        ganas |   4,624,814 |   4,534,858 |  6.454265 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|           se |  65,455,156 |  58,105,334 |  2.774723 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|           me |  96,836,816 |  80,037,599 |  2.312716 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|           de | 208,621,296 | 151,285,612 |  1.394191 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|           lo |  59,940,393 |  52,347,438 |  2.925275 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|     prefiero |     578,190 |     574,258 |   9.43555 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|     entramos |      49,248 |      48,864 | 12.990392 |        24 |       AR:BO:BR:CA:CL:CO:CR:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|       abuelo |     253,425 |     246,573 | 10.655232 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|            a | 146,499,869 | 115,081,067 |  1.788815 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|          nos |  10,457,745 |   9,570,310 |  5.376757 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|            ' |   3,901,930 |   2,885,972 |  7.106265 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|            y | 144,975,768 | 119,027,536 |  1.740171 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|         tire |     158,141 |     156,023 | 11.315487 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|        grito |     163,167 |     159,993 | 11.279237 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|       eructo |       4,767 |       4,635 | 16.388382 |        21 |                AR:BR:CA:CL:CO:CR:DO:EC:ES:FR:GB:GT:MX:NI:PA:PE:PY:SV:US:UY:VE |
+|         alto |     726,677 |     717,065 |  9.115146 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|         risa |   1,004,984 |     991,432 |  8.647736 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|      escucho |     519,057 |     512,993 |  9.598309 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|  valentiinaa |           5 |           5 |  26.10746 |         1 |                                                                            AR |
+|        cagar |     373,790 |     370,720 | 10.066918 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|     gustaria |     836,327 |     826,237 |  8.910694 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|         esta |  24,057,042 |  22,791,926 |  4.124871 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|       escena |     151,528 |     148,867 | 11.383222 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|        desde |   5,528,368 |   5,408,770 |  6.200022 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|            q |  22,308,390 |  16,605,848 |  4.581703 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|          del |  27,928,255 |  25,555,672 |  3.959751 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|         algo |   7,164,395 |   6,914,708 |  5.845654 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|    cubriendo |      12,000 |      11,958 | 15.021142 |        23 |          AR:BO:BR:CA:CL:CO:CR:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PY:SV:US:UY:VE |
+|        saber |   2,448,794 |   2,401,532 |  7.371367 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|       detras |     321,486 |     315,807 | 10.298204 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|         bano |     472,068 |     461,118 |  9.752112 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|         _usr | 340,241,452 | 183,932,405 |   1.11229 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|           el | 120,544,057 |  98,123,501 |  2.018795 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|         para |  43,302,330 |  39,938,320 |   3.31562 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|    instagram |     538,148 |     532,137 |  9.545451 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|       volver |   1,767,636 |   1,724,928 |  7.848786 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|       queria |   1,363,136 |   1,333,932 |  8.219637 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|        abrir |     314,424 |     311,263 | 10.319114 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|            😂 |  17,909,514 |  11,888,333 |  5.063847 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|         casa |   5,194,767 |   5,065,508 |  6.294615 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|      despido |      52,841 |      52,332 | 12.891471 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|          que | 226,600,112 | 162,858,554 |  1.287847 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|         digo |   2,383,076 |   2,321,663 |  7.420163 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|          por |  52,414,692 |  47,129,205 |  3.076773 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|       quiero |  11,882,464 |  11,120,612 |  5.160158 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|        adios |     341,841 |     327,723 | 10.244771 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|           te |  41,566,020 |  35,022,642 |  3.505106 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|           si |  40,051,528 |  36,716,026 |  3.436984 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|          los |  55,952,380 |  47,286,470 |  3.071967 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|        esten |     377,901 |     372,444 | 10.060225 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|           en | 100,408,451 |  84,530,051 |   2.23393 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|          dar |   2,289,788 |   2,255,530 |  7.461855 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|          van |   3,941,321 |   3,807,138 |  6.706615 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|       cabida |      73,476 |      73,037 | 12.410541 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|      comerme |      77,814 |      77,200 | 12.330568 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|        todos |  11,157,030 |  10,708,419 |  5.214649 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|         otra |   4,472,064 |   4,358,651 |   6.51144 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|            d |   5,206,352 |   4,163,563 |  6.577503 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|        forma |   1,310,929 |   1,286,836 |  8.271494 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|           es |  71,802,267 |  62,694,831 |  2.665048 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|        unica |   1,109,888 |   1,100,933 |  8.496594 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|           la | 147,185,891 | 114,156,076 |  1.800458 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|          muy |  10,141,506 |   9,564,741 |  5.377596 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|           ni |  12,331,596 |  10,871,801 |  5.192803 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|           pq |   1,018,859 |     974,186 |  8.673053 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|           no | 127,376,096 | 105,893,447 |  1.908853 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|     chabones |      21,620 |      21,527 | 14.172997 |        12 |                                           AR:BR:CL:CO:ES:FR:GB:MX:PE:PY:US:UY |
+|        _htag |  70,759,927 |  45,120,284 |  3.139618 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|        ficho |       8,534 |       8,387 | 15.532866 |        23 |          AR:BO:BR:CA:CL:CO:CR:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PY:SV:US:UY:VE |
+| artificiales |      25,329 |      25,135 | 13.949452 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|           re |   4,795,406 |   4,549,231 |  6.449699 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|        sabia |     918,946 |     900,744 |  8.786133 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|      meterme |      80,700 |      80,320 |  12.27341 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|           yo |  26,415,090 |  25,157,332 |  3.982415 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|       fuegos |      60,071 |      58,910 | 12.720654 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|            m |   1,544,628 |   1,403,815 |  8.145968 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|        donde |   5,655,364 |   5,435,276 |  6.192969 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|        hablo |     898,852 |     866,863 |  8.841446 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|       pasame |      83,662 |      83,114 | 12.224078 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|           tu |  19,526,877 |  17,377,918 |  4.516139 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|        antoo |       2,588 |       2,493 | 17.282934 |        10 |                                                 AR:CL:CO:ES:MX:PE:PY:US:UY:VE |
+|     horrible |     608,475 |     598,866 |  9.375016 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|          wsp |     201,862 |     199,970 | 10.957463 |        23 |          AR:BO:BR:CA:CL:CO:CR:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PY:SV:US:UY:VE |
+|           un |  55,561,242 |  49,634,694 |  3.002045 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|         todo |  19,384,533 |  18,491,101 |  4.426563 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|          tan |   8,513,221 |   8,025,086 |  5.630806 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|     personas |   3,720,458 |   3,620,029 |  6.779321 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|        huevo |     540,941 |     527,792 |   9.55728 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|        chupa |     267,590 |     262,772 | 10.563436 |        25 |    AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|          cae |     744,871 |     726,769 |  9.095753 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|          les |   6,477,252 |   6,074,447 |  6.032569 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
+|         bien |  11,832,742 |  11,372,639 |  5.127827 |        26 | AR:BO:BR:CA:CL:CO:CR:CU:DO:EC:ES:FR:GB:GQ:GT:HN:MX:NI:PA:PE:PR:PY:SV:US:UY:VE |
 
