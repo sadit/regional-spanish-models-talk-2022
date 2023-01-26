@@ -1,9 +1,8 @@
-@def title = "Language models"
+@def title = "Modelos de lenguaje"
 
 # Modelos de lenguaje
 
-- [Recursos](https://ingeotec.github.io/regional-spanish-models/)
-- [Repositorio](https://github.com/INGEOTEC/regional-spanish-models)
+[Recursos](https://ingeotec.github.io/regional-spanish-models/) -- [Repositorio](https://github.com/INGEOTEC/regional-spanish-models)
 
 
 Los modelos de lenguaje, _Language Models (LM)_, son más sofisticados que los word-embeddings ya que para determinar el vector de una palabra considera el contexto de la misma, y muchos modelos también son capaces de generar apartir de lo aprendido.
