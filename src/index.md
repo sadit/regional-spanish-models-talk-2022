@@ -2,13 +2,15 @@
 @def tags = ["Introducción"]
 
 # Modelos regionalizados para variantes del español basado en Twitter
-Regionalized models for Spanish language variations based on Twitter
 _Enero 2023_
 
-## **Eric S. Téllez** -- CONACyT - CICESE - INFOTEC [email:eric.tellez@ieee.org]()
+~~~
+<div>
+<div>Eric S. Téllez -- CONACyT - CICESE - INFOTEC <eric.tellez@ieee.org></div>
 
-
-### Este es un trabajo en conjunto con _Daniela Moctezuma, Sabino Miranda, Mario Graff, y Guillermo Ruiz_.
+<div>Este es un trabajo en conjunto con <em>Daniela Moctezuma, Sabino Miranda, Mario Graff, y Guillermo Ruiz</em></div>
+<div>
+~~~
 
 <!--
 <div style="font-size: 420px; opacity: 0.2; font-weight: bold; color: rgb(130, 100, 30)">Ñ ñ</div>
