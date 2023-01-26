@@ -23,7 +23,7 @@ Los modelos de lenguaje, _Language Models (LM)_, son más sofisticados que los w
 
 ### Como se compara BILMA con los word-embeddings
 
-\img{}{https://github.com/sadit/regional-spanish-models-talk-2022/raw/main/src/figs/fig-bilma-cls.png}{_Accuracy_ en predicción de Emoji-15 -- _tuneado_}{}
+\img{}{https://github.com/sadit/regional-spanish-models-talk-2022/raw/main/src/figs/fig-bilma-cls.png}{\textit{Accuracy} en predicción de Emoji-15 -- \textit{tuneado}}{}
 
 
 @@warn
@@ -35,6 +35,7 @@ Los modelos de lenguaje, _Language Models (LM)_, son más sofisticados que los w
 @@
 
 ### Usando BILMA para completar frases (mediante máscaras)
-\img{}{https://github.com/sadit/regional-spanish-models-talk-2022/raw/main/src/figs/fig-bilma-mlm.png}{_Accuracy_ en la tarea MLM para el test}{}
+\img{}{https://github.com/sadit/regional-spanish-models-talk-2022/raw/main/src/figs/fig-bilma-mlm.png}{\textit{Accuracy} en la tarea MLM para el test}{}
 
+#### Ejemplos de completar frases (no vistas) sobre recursos regionales
 \img{}{https://github.com/sadit/regional-spanish-models-talk-2022/raw/main/src/figs/bilma-mlm-table.png}{Completando frases -- minería de opinión}{}
