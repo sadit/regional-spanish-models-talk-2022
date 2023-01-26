@@ -1,14 +1,14 @@
-@def title = "Spanish language variations in Twitter"
+@def title = "Recursos regionalizados para el procesamiento automático de datos de redes sociales (Twitter)"
 @def tags = ["Introducción"]
 
-# Variaciones del lenguaje español en redes sociales (Twitter)
+# Modelos regionalizados para variantes del español basado en Twitter
+Regionalized models for Spanish language variations based on Twitter
+_Enero 2023_
 
-Enero 2023
-
-**Eric S. Téllez** -- CONACyT - CICESE - INFOTEC [email:eric.tellez@ieee.org]()
+## **Eric S. Téllez** -- CONACyT - CICESE - INFOTEC [email:eric.tellez@ieee.org]()
 
 
-Este es un trabajo en conjunto con _Daniela Moctezuma, Sabino Miranda, Mario Graff, y Guillermo Ruiz_.
+### Este es un trabajo en conjunto con _Daniela Moctezuma, Sabino Miranda, Mario Graff, y Guillermo Ruiz_.
 
 <!--
 <div style="font-size: 420px; opacity: 0.2; font-weight: bold; color: rgb(130, 100, 30)">Ñ ñ</div>
