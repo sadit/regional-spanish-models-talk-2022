@@ -68,17 +68,17 @@
 <div class="warn"><strong>BERT</strong> es un modelo de lenguaje que básicamente rompió el paradigma. Consiste en una serie de <em>encoders</em> que generan embeddings para cada palabra dependiendo de su contexto. El entrenamiento usa un lenguaje de enmascarado, Masked Language Model &#40;MLM&#41;. Cada sentencia enmascará tokens de manera aleatoría &#40;se enmascaran 15&#37; de los tokens&#41;. También se entrena para predicción de la siguiente frase.</div>
 <h2 id="recursos_computacionales_y_necesidad_de_datos"><a href="#recursos_computacionales_y_necesidad_de_datos" class="header-anchor">Recursos computacionales y necesidad de datos</a></h2>
 <ul>
-<li><p>Los modelos de lenguaje requieren una gran cantidad de datos, solo generamos recursos con MLM sobre AR, CL, CO, MX, ES, UY, VE, y US, i.e., los más grandes. También se utiliza la unión de todos.</p>
+<li><p>Los modelos de lenguaje requieren una gran cantidad de datos, solo generamos recursos con MLM sobre AR, CL, CO, MX, ES, UY, VE, y US, i.e., los más grandes.</p>
 </li>
 <li><p>Todos los modelos tienen series de dos encoders con cuatro cabezas de atención cada una y una salida de 512 dimensiones por embedding</p>
 </li>
-<li><p>Corresponde al <em>small-size</em> del BERT original, y es lo que actualmente podemos con los recursos que contamos en un tiempo <em>pagable</em> &#40;usamos una estanción de trabajo NVIDIA TITAN RTX con 24 GB cada una&#41;</p>
+<li><p>Corresponde al <em>small-size</em> del BERT original, y es lo que actualmente podemos con los recursos que contamos en un tiempo <em>pagable</em> &#40;usamos una estanción de trabajo con dos NVIDIA TITAN RTX con 24 GB cada una&#41;.</p>
 </li>
 <li><p>Nombramos a nuestro modelo BILMA por <em>Bert In Latin America</em>.</p>
 </li>
 <li><p>Usamos un <em>learning rate</em> de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>5</mn></mrow></msup></mrow><annotation encoding="application/x-tex">10^{-5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></span> con el optimizador Adam &#40;usamos tensorflow 2 y Keras&#41;.</p>
 </li>
-<li><p>Los modelos para CL, UY, VE, y US se entrenaron con 3 epocas y AR, CO, MX, y ES por solo una dado los tamaños de los corpus.</p>
+<li><p>Los modelos para CL, UY, VE, y US se entrenaron con 3 epocas y AR, CO, MX, y ES con solo una, dado los tamaños de los corpus.</p>
 </li>
 </ul>
 <h3 id="como_se_compara_bilma_con_los_word-embeddings"><a href="#como_se_compara_bilma_con_los_word-embeddings" class="header-anchor">Como se compara BILMA con los word-embeddings</a></h3>
@@ -88,11 +88,11 @@
 <div class="warn"><ul>
 <li><p>Se <em>tuneó</em> el modelo BILMA para predecir emoticones añadiendo dos capas lineales a los embeddings de inicio, por lo que se puede ver que se predice independiente de la posición. </p>
 </li>
-<li><p>Tuneo con 90&#37;-10&#37; del training set de la región hasta que el <em>accuracy</em> convergió.</p>
+<li><p><em>Tuneado</em> con 90&#37;-10&#37; del training set de la región hasta que el <em>accuracy</em> converge.</p>
 </li>
 <li><p>Se evaluó con test regional.</p>
 </li>
-<li><p>Observe que es una matriz de modelos pre-entrenados y tuneos.</p>
+<li><p>Observe que es una matriz de modelos pre-entrenados y <em>tuneos</em>.</p>
 </li>
 <li><p>Los resultados en general son muy similares a los modelos de fastText, pero, los modelos BILMA pueden hacer más cosas...</p>
 </li>

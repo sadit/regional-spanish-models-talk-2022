@@ -13,12 +13,12 @@ Los modelos de lenguaje, _Language Models (LM)_, son más sofisticados que los w
 @@
 
 ## Recursos computacionales y necesidad de datos
-- Los modelos de lenguaje requieren una gran cantidad de datos, solo generamos recursos con MLM sobre AR, CL, CO, MX, ES, UY, VE, y US, i.e., los más grandes. También se utiliza la unión de todos.
+- Los modelos de lenguaje requieren una gran cantidad de datos, solo generamos recursos con MLM sobre AR, CL, CO, MX, ES, UY, VE, y US, i.e., los más grandes.
 - Todos los modelos tienen series de dos encoders con cuatro cabezas de atención cada una y una salida de 512 dimensiones por embedding
-- Corresponde al _small-size_ del BERT original, y es lo que actualmente podemos con los recursos que contamos en un tiempo _pagable_ (usamos una estanción de trabajo NVIDIA TITAN RTX con 24 GB cada una)
+- Corresponde al _small-size_ del BERT original, y es lo que actualmente podemos con los recursos que contamos en un tiempo _pagable_ (usamos una estanción de trabajo con dos NVIDIA TITAN RTX con 24 GB cada una).
 - Nombramos a nuestro modelo BILMA por _Bert In Latin America_.
 - Usamos un _learning rate_ de $10^{-5}$ con el optimizador Adam (usamos tensorflow 2 y Keras).
-- Los modelos para CL, UY, VE, y US se entrenaron con 3 epocas y AR, CO, MX, y ES por solo una dado los tamaños de los corpus.
+- Los modelos para CL, UY, VE, y US se entrenaron con 3 epocas y AR, CO, MX, y ES con solo una, dado los tamaños de los corpus.
 
 
 ### Como se compara BILMA con los word-embeddings
@@ -28,9 +28,9 @@ Los modelos de lenguaje, _Language Models (LM)_, son más sofisticados que los w
 
 @@warn
 - Se _tuneó_ el modelo BILMA para predecir emoticones añadiendo dos capas lineales a los embeddings de inicio, por lo que se puede ver que se predice independiente de la posición. 
-- Tuneo con 90%-10% del training set de la región hasta que el _accuracy_ convergió.
+- _Tuneado_ con 90%-10% del training set de la región hasta que el _accuracy_ converge.
 - Se evaluó con test regional.
-- Observe que es una matriz de modelos pre-entrenados y tuneos.
+- Observe que es una matriz de modelos pre-entrenados y _tuneos_.
 - Los resultados en general son muy similares a los modelos de fastText, pero, los modelos BILMA pueden hacer más cosas...
 @@
 
