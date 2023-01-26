@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="/libs/katex/katex.min.css">
+   <link rel="stylesheet" href="/regional-spanish-models-talk-2022/libs/katex/katex.min.css">
    
   
 
-  <link href="/css/franklin.css" rel="stylesheet">
-<link href="/css/vela.css" rel="stylesheet">
-<link href="/css/mystyle.css" rel="stylesheet">
+  <link href="/regional-spanish-models-talk-2022/css/franklin.css" rel="stylesheet">
+<link href="/regional-spanish-models-talk-2022/css/vela.css" rel="stylesheet">
+<link href="/regional-spanish-models-talk-2022/css/mystyle.css" rel="stylesheet">
 
-<script src="/libs/vela/jquery.min.js"></script>
+<script src="/regional-spanish-models-talk-2022/libs/vela/jquery.min.js"></script>
 
-<link rel="icon" href="/assets/favicon.png">
+<link rel="icon" href="/regional-spanish-models-talk-2022/assets/favicon.png">
 
 
   <title>Regional Spanish Models</title>
@@ -28,12 +28,12 @@
 
   <nav class="sidebar-nav">
     <ul class="metismenu" id="metismenu" >
-      <li><a href="/index.html">Introducción</a></li>
-      <li><a href="/corpora/">Corpus</a></li>
-      <li><a href="/recursos-lexicos/">Recursos léxicos</a></li>
-      <li><a href="/recursos-semanticos/">Word embeddings</a></li>
-      <li><a href="/recursos-modelos-de-lenguaje/">Modelos de lenguaje</a></li>
-      <li><a href="/conclusiones/">Conclusiones y trabajo a futuro</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/index.html">Introducción</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/corpora/">Corpus</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/recursos-lexicos/">Recursos léxicos</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/recursos-semanticos/">Word embeddings</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/recursos-modelos-de-lenguaje/">Modelos de lenguaje</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/conclusiones/">Conclusiones y trabajo a futuro</a></li>
     </ul>
   </nav>
 
@@ -58,9 +58,9 @@
 
 <!-- Content appended here -->
 <div class="franklin-content"><h1 id="recursos_regionalizados_usando_twitter"><a href="#recursos_regionalizados_usando_twitter" class="header-anchor">Recursos regionalizados usando Twitter</a></h1>
-<p><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-tweets-by-country-2016-2019.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<p><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-tweets-by-country-2016-2019.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Tuits por región (es)</div>
-</div> <div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-users-by-country-2016-2019.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+</div> <div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-users-by-country-2016-2019.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Usuarios por región (es)</div>
 </div></p>
 <h2 id="corpus"><a href="#corpus" class="header-anchor">Corpus</a></h2>
@@ -76,7 +76,7 @@
 </li>
 <li><p>se agrupan hashtags, usuarios y números</p>
 <ul>
-<li><p>números del \(1-9\) se mantienen, el resto se representa como \(0\)</p>
+<li><p>números del <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">1-9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">9</span></span></span></span> se mantienen, el resto se representa como <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span></p>
 </li>
 </ul>
 </li>
@@ -89,21 +89,21 @@
 </ul></div>
 <p>Los tokens pueden ser palabras, puntuaciones o emojis.</p>
 <h2 id="ley_de_zipf"><a href="#ley_de_zipf" class="header-anchor">Ley de Zipf </a></h2>
-<div style="width: 100%; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/zipf-es.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<div style="width: 100%; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/zipf-es.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Ley de Zipf para diferentes regiones (Twitter)</div>
 </div>
 <h2 id="ley_de_heaps"><a href="#ley_de_heaps" class="header-anchor">Ley de Heaps </a></h2>
-<div style="width: 100%; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/heaps-es.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<div style="width: 100%; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/heaps-es.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Ley de Heaps para diferentes regiones (Twitter)</div>
 </div>
 
   <div style="width: 100%; background-color: rgb(229, 195, 182); border: solid rgb(36, 36, 37)  1px; padding: 0.5em; margin-top: 1em; text-align: center;">
-    <span> <a href="/index.html">Introducción</a></span> -
-    <span> <a href="/corpora/">Corpus</a></span> -
-    <span><a href="/recursos-lexicos/">Recursos léxicos</a></span> -
-    <span><a href="/recursos-semanticos/">Word embeddings</a></span> -
-    <span><a href="/recursos-modelos-de-lenguaje/">Modelos de lenguaje</a></span> -
-    <span> <a href="/conclusiones/">Conclusiones</a></span>
+    <span> <a href="/regional-spanish-models-talk-2022/index.html">Introducción</a></span> -
+    <span> <a href="/regional-spanish-models-talk-2022/corpora/">Corpus</a></span> -
+    <span><a href="/regional-spanish-models-talk-2022/recursos-lexicos/">Recursos léxicos</a></span> -
+    <span><a href="/regional-spanish-models-talk-2022/recursos-semanticos/">Word embeddings</a></span> -
+    <span><a href="/regional-spanish-models-talk-2022/recursos-modelos-de-lenguaje/">Modelos de lenguaje</a></span> -
+    <span> <a href="/regional-spanish-models-talk-2022/conclusiones/">Conclusiones</a></span>
   </div>
 
 <div class="page-foot">
@@ -112,12 +112,12 @@
 </div>
 </div><!-- CONTENT ENDS HERE -->
   </main> <!-- end of id=main -->
-  <script src="/libs/vela/metisMenu.min.js"></script>
-  <script src="/libs/vela/slideout.min.js"></script>
+  <script src="/regional-spanish-models-talk-2022/libs/vela/metisMenu.min.js"></script>
+  <script src="/regional-spanish-models-talk-2022/libs/vela/slideout.min.js"></script>
   
-    <script src="/libs/katex/katex.min.js"></script>
-<script src="/libs/katex/auto-render.min.js"></script>
-<script>renderMathInElement(document.body)</script>
+    
+
+
 
   
   

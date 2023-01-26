@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="/libs/katex/katex.min.css">
+   <link rel="stylesheet" href="/regional-spanish-models-talk-2022/libs/katex/katex.min.css">
    
-   <link rel="stylesheet" href="/libs/highlight/github.min.css">
+   <link rel="stylesheet" href="/regional-spanish-models-talk-2022/libs/highlight/github.min.css">
    
 
-  <link href="/css/franklin.css" rel="stylesheet">
-<link href="/css/vela.css" rel="stylesheet">
-<link href="/css/mystyle.css" rel="stylesheet">
+  <link href="/regional-spanish-models-talk-2022/css/franklin.css" rel="stylesheet">
+<link href="/regional-spanish-models-talk-2022/css/vela.css" rel="stylesheet">
+<link href="/regional-spanish-models-talk-2022/css/mystyle.css" rel="stylesheet">
 
-<script src="/libs/vela/jquery.min.js"></script>
+<script src="/regional-spanish-models-talk-2022/libs/vela/jquery.min.js"></script>
 
-<link rel="icon" href="/assets/favicon.png">
+<link rel="icon" href="/regional-spanish-models-talk-2022/assets/favicon.png">
 
 
   <title>Regional Spanish Models</title>
@@ -29,12 +29,12 @@
 
   <nav class="sidebar-nav">
     <ul class="metismenu" id="metismenu" >
-      <li><a href="/index.html">Introducción</a></li>
-      <li><a href="/corpora/">Corpus</a></li>
-      <li><a href="/recursos-lexicos/">Recursos léxicos</a></li>
-      <li><a href="/recursos-semanticos/">Word embeddings</a></li>
-      <li><a href="/recursos-modelos-de-lenguaje/">Modelos de lenguaje</a></li>
-      <li><a href="/conclusiones/">Conclusiones y trabajo a futuro</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/index.html">Introducción</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/corpora/">Corpus</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/recursos-lexicos/">Recursos léxicos</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/recursos-semanticos/">Word embeddings</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/recursos-modelos-de-lenguaje/">Modelos de lenguaje</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/conclusiones/">Conclusiones y trabajo a futuro</a></li>
     </ul>
   </nav>
 
@@ -109,19 +109,19 @@ describe(D.localrank) = nothing
 <div class="warn">Llegados a este punto deberíamos tener cierta idea de la bondad de los modelos semánticos regionalizados, sin embargo, hay problemas en las distribuciones de los datos, algunas regiones tienen corpus enormes mientras que otros son relativamente pequeños. ¿Qué hacer?</div>
 <h1 id="similitud_entre_regiones"><a href="#similitud_entre_regiones" class="header-anchor">Similitud entre regiones</a></h1>
 <div class="define">Necesitamos una matriz de afinidad, como lo hicimos con el caso léxico, pero <strong>los embeddings de diferentes regiones no son comparables entre sí.</strong></div>
-<p><strong>Representación de las regiones</strong> Para calcular la similitud usamos una representación que extrae información semántica basada en el grafo de los \(k\) vecinos cercanos. Esto soluciona el problema de comparación, pero introduce diferentes problemas relacionados con los recursos ya que el tamaño del vocabulario es relativamente grande. </p>
+<p><strong>Representación de las regiones</strong> Para calcular la similitud usamos una representación que extrae información semántica basada en el grafo de los <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span> vecinos cercanos. Esto soluciona el problema de comparación, pero introduce diferentes problemas relacionados con los recursos ya que el tamaño del vocabulario es relativamente grande. </p>
 <div class="warn"><ul>
-<li><p>Recordando, cada palabra es un punto en \(300\) dimensiones.</p>
+<li><p>Recordando, cada palabra es un punto en <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>300</mn></mrow><annotation encoding="application/x-tex">300</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">300</span></span></span></span> dimensiones.</p>
 </li>
-<li><p>La distancia entre puntos se mide usando \(1 - cos(u, v)\).</p>
+<li><p>La distancia entre puntos se mide usando <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mi>c</mi><mi>o</mi><mi>s</mi><mo stretchy="false">(</mo><mi>u</mi><mo separator="true">,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">1 - cos(u, v)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">cos</span><span class="mopen">(</span><span class="mord mathnormal">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mclose">)</span></span></span></span>.</p>
 </li>
 <li><p>Cada región es una nube de puntos &#40;palabras&#41;.</p>
 </li>
 <li><p>Uso de un vocabulario restringuido &#40;preservar tokens que aparecen en al menos 10 regiones&#41;; esto también reduce el problema de la disparidad de datos entre diferentes corpus.</p>
 </li>
-<li><p>Uso de herramientas especiales para la construcción de la gráfica de \(k\) vecinos &#40;\(k=33\)&#41;.</p>
+<li><p>Uso de herramientas especiales para la construcción de la gráfica de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span> vecinos &#40;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>33</mn></mrow><annotation encoding="application/x-tex">k=33</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">33</span></span></span></span>&#41;.</p>
 </li>
-<li><p>Cada región se representa en un vector disperso de muy alta dimensión, i.e., \(10^{10}\) componentes con \(\approx{}3.8\) millones de componentes diferentes de zero. Se mide nuevamente con distancia coseno, pero con los vectores resultantes.</p>
+<li><p>Cada región se representa en un vector disperso de muy alta dimensión, i.e., <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>10</mn></msup></mrow><annotation encoding="application/x-tex">10^{10}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">10</span></span></span></span></span></span></span></span></span></span></span></span> componentes con <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≈</mo><mrow></mrow><mn>3.8</mn></mrow><annotation encoding="application/x-tex">\approx{}3.8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4831em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord"></span><span class="mord">3.8</span></span></span></span> millones de componentes diferentes de zero. Se mide nuevamente con distancia coseno, pero con los vectores resultantes.</p>
 </li>
 </ul></div>
 <div style="; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="https://raw.githubusercontent.com/sadit/RegionalSpanish/main/figs/fig-common-tokens-per-region.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
@@ -136,7 +136,7 @@ describe(D.localrank) = nothing
 <div style="; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="https://github.com/INGEOTEC/regional-spanish-models/raw/main/figs/fig-colormap-common-voc-semantic-4.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Mapa colorizado con la proyección semántica 3D</div>
 </div>
-<h3 id="ejemplos_de_k_vecinos"><a href="#ejemplos_de_k_vecinos" class="header-anchor">Ejemplos de \(k\) vecinos</a></h3>
+<h3 id="ejemplos_de_k_vecinos"><a href="#ejemplos_de_k_vecinos" class="header-anchor">Ejemplos de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span> vecinos</a></h3>
 <p><a href="https://github.com/sadit/RegionalSpanish/blob/main/notebooks/explore-region-similarities.ipynb">Notebook ejemplos</a></p>
 <pre><code class="language-julia">println&#40;read&#40;&quot;ejemplos-palabras-knn.md&quot;, String&#41;&#41;</code></pre>
 <h4 id="iglesia"><a href="#iglesia" class="header-anchor">Iglesia</a></h4></p>
@@ -2028,7 +2028,7 @@ describe(D.localrank) = nothing
 <div class="warn"><ul>
 <li><p>Multitarea &#40;CPU&#41;</p>
 </li>
-<li><p>Altamente eficiente para cálculo de las gráficas de \(k\) vecinos</p>
+<li><p>Altamente eficiente para cálculo de las gráficas de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span> vecinos</p>
 </li>
 <li><p>Amplia flexibilidad en funciones de distancias:</p>
 <ul>
@@ -2046,96 +2046,96 @@ describe(D.localrank) = nothing
 <p>Para las proyecciones se uso el paquete de Julia</p>
 <p><a href="https://github.com/sadit/SimSearchManifoldLearning.jl">SimSearchManifoldLearning.jl</a> hace uso de <code>SimilaritySearch.jl</code> y soporta proyecciones UMAP y otras relacionadas con manifold learning.</p></div>
 
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-ALL.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-ALL.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región ALL -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-AR.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-AR.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región AR -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-BO.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-BO.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región BO -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-BR.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-BR.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región BR -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-CA.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-CA.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región CA -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-CL.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-CL.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región CL -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-CO.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-CO.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región CO -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-CR.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-CR.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región CR -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-CU.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-CU.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región CU -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-DO.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-DO.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región DO -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-EC.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-EC.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región EC -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-ES.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-ES.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región ES -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-FR.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-FR.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región FR -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-GB.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-GB.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región GB -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-GQ.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-GQ.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región GQ -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-GT.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-GT.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región GT -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-HN.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-HN.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región HN -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-MX.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-MX.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región MX -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-NI.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-NI.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región NI -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-PA.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-PA.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región PA -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-PE.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-PE.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región PE -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-PR.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-PR.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región PR -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-PY.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-PY.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región PY -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-SV.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-SV.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región SV -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-US.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-US.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región US -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-UY.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-UY.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región UY -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
-<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-umap-common-voc-VE.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<h2><div style="display: block-inline;; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-umap-common-voc-VE.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Proyección 2D y 3D (color) de los vocabularios semánticos de la región VE -- palabras comunes (qué aparecen en al menos 10 regiones)</div>
 </div></h2>
 
 
   <div style="width: 100%; background-color: rgb(229, 195, 182); border: solid rgb(36, 36, 37)  1px; padding: 0.5em; margin-top: 1em; text-align: center;">
-    <span> <a href="/index.html">Introducción</a></span> -
-    <span> <a href="/corpora/">Corpus</a></span> -
-    <span><a href="/recursos-lexicos/">Recursos léxicos</a></span> -
-    <span><a href="/recursos-semanticos/">Word embeddings</a></span> -
-    <span><a href="/recursos-modelos-de-lenguaje/">Modelos de lenguaje</a></span> -
-    <span> <a href="/conclusiones/">Conclusiones</a></span>
+    <span> <a href="/regional-spanish-models-talk-2022/index.html">Introducción</a></span> -
+    <span> <a href="/regional-spanish-models-talk-2022/corpora/">Corpus</a></span> -
+    <span><a href="/regional-spanish-models-talk-2022/recursos-lexicos/">Recursos léxicos</a></span> -
+    <span><a href="/regional-spanish-models-talk-2022/recursos-semanticos/">Word embeddings</a></span> -
+    <span><a href="/regional-spanish-models-talk-2022/recursos-modelos-de-lenguaje/">Modelos de lenguaje</a></span> -
+    <span> <a href="/regional-spanish-models-talk-2022/conclusiones/">Conclusiones</a></span>
   </div>
 
 <div class="page-foot">
@@ -2144,16 +2144,16 @@ describe(D.localrank) = nothing
 </div>
 </div><!-- CONTENT ENDS HERE -->
   </main> <!-- end of id=main -->
-  <script src="/libs/vela/metisMenu.min.js"></script>
-  <script src="/libs/vela/slideout.min.js"></script>
+  <script src="/regional-spanish-models-talk-2022/libs/vela/metisMenu.min.js"></script>
+  <script src="/regional-spanish-models-talk-2022/libs/vela/slideout.min.js"></script>
   
-    <script src="/libs/katex/katex.min.js"></script>
-<script src="/libs/katex/auto-render.min.js"></script>
-<script>renderMathInElement(document.body)</script>
+    
+
+
 
   
   
-    <script src="/libs/highlight/highlight.pack.js"></script>
+    <script src="/regional-spanish-models-talk-2022/libs/highlight/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();hljs.configure({tabReplace: '    '});</script>
 
   

@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="/libs/katex/katex.min.css">
+   <link rel="stylesheet" href="/regional-spanish-models-talk-2022/libs/katex/katex.min.css">
    
-   <link rel="stylesheet" href="/libs/highlight/github.min.css">
+   <link rel="stylesheet" href="/regional-spanish-models-talk-2022/libs/highlight/github.min.css">
    
 
-  <link href="/css/franklin.css" rel="stylesheet">
-<link href="/css/vela.css" rel="stylesheet">
-<link href="/css/mystyle.css" rel="stylesheet">
+  <link href="/regional-spanish-models-talk-2022/css/franklin.css" rel="stylesheet">
+<link href="/regional-spanish-models-talk-2022/css/vela.css" rel="stylesheet">
+<link href="/regional-spanish-models-talk-2022/css/mystyle.css" rel="stylesheet">
 
-<script src="/libs/vela/jquery.min.js"></script>
+<script src="/regional-spanish-models-talk-2022/libs/vela/jquery.min.js"></script>
 
-<link rel="icon" href="/assets/favicon.png">
+<link rel="icon" href="/regional-spanish-models-talk-2022/assets/favicon.png">
 
 
   <title>Regional Spanish Models</title>
@@ -29,12 +29,12 @@
 
   <nav class="sidebar-nav">
     <ul class="metismenu" id="metismenu" >
-      <li><a href="/index.html">Introducción</a></li>
-      <li><a href="/corpora/">Corpus</a></li>
-      <li><a href="/recursos-lexicos/">Recursos léxicos</a></li>
-      <li><a href="/recursos-semanticos/">Word embeddings</a></li>
-      <li><a href="/recursos-modelos-de-lenguaje/">Modelos de lenguaje</a></li>
-      <li><a href="/conclusiones/">Conclusiones y trabajo a futuro</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/index.html">Introducción</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/corpora/">Corpus</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/recursos-lexicos/">Recursos léxicos</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/recursos-semanticos/">Word embeddings</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/recursos-modelos-de-lenguaje/">Modelos de lenguaje</a></li>
+      <li><a href="/regional-spanish-models-talk-2022/conclusiones/">Conclusiones y trabajo a futuro</a></li>
     </ul>
   </nav>
 
@@ -62,7 +62,7 @@
 <p>Para solventar la falta de recursos regionales para las variantes de Español generamos los siguientes recursos modelos.</p>
 <p><a href="https://ingeotec.github.io/regional-spanish-models/">Recursos</a> – <a href="https://github.com/INGEOTEC/regional-spanish-models">Repositorio</a></p>
 <h2 id="vocabularios"><a href="#vocabularios" class="header-anchor">Vocabularios</a></h2>
-<div style="; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-raw-freq-per-region.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<div style="; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-raw-freq-per-region.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Frecuencias de tokens por región (rank 20)</div>
 </div>
 <h2 id="estadísticas_de_los_vocabularios"><a href="#estadísticas_de_los_vocabularios" class="header-anchor">Estadísticas de los vocabularios</a></h2>
@@ -186,10 +186,10 @@
 </li>
 <li><p>Se calcula una matriz de afinidad.</p>
 </li>
-<li><p>Se usa la distancia \(1 - cos(voc_1, voc_2)\).</p>
+<li><p>Se usa la distancia <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mi>c</mi><mi>o</mi><mi>s</mi><mo stretchy="false">(</mo><mi>v</mi><mi>o</mi><msub><mi>c</mi><mn>1</mn></msub><mo separator="true">,</mo><mi>v</mi><mi>o</mi><msub><mi>c</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">1 - cos(voc_1, voc_2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">cos</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">o</span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">o</span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>.</p>
 </li>
 </ul></div>
-<div style="; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/figs/fig-lexheatmap-flow.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<div style="; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="/regional-spanish-models-talk-2022/figs/fig-lexheatmap-flow.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
 <div style="text-align: center; width: 100%;"> Cálculo de una matriz de afinidad entre regiones.</div>
 </div>
 <h4 id="proyecciones_2d_y_3d_-_umap"><a href="#proyecciones_2d_y_3d_-_umap" class="header-anchor">Proyecciones 2D y 3D - UMAP</a></h4>
@@ -202,12 +202,12 @@
 </div>
 
   <div style="width: 100%; background-color: rgb(229, 195, 182); border: solid rgb(36, 36, 37)  1px; padding: 0.5em; margin-top: 1em; text-align: center;">
-    <span> <a href="/index.html">Introducción</a></span> -
-    <span> <a href="/corpora/">Corpus</a></span> -
-    <span><a href="/recursos-lexicos/">Recursos léxicos</a></span> -
-    <span><a href="/recursos-semanticos/">Word embeddings</a></span> -
-    <span><a href="/recursos-modelos-de-lenguaje/">Modelos de lenguaje</a></span> -
-    <span> <a href="/conclusiones/">Conclusiones</a></span>
+    <span> <a href="/regional-spanish-models-talk-2022/index.html">Introducción</a></span> -
+    <span> <a href="/regional-spanish-models-talk-2022/corpora/">Corpus</a></span> -
+    <span><a href="/regional-spanish-models-talk-2022/recursos-lexicos/">Recursos léxicos</a></span> -
+    <span><a href="/regional-spanish-models-talk-2022/recursos-semanticos/">Word embeddings</a></span> -
+    <span><a href="/regional-spanish-models-talk-2022/recursos-modelos-de-lenguaje/">Modelos de lenguaje</a></span> -
+    <span> <a href="/regional-spanish-models-talk-2022/conclusiones/">Conclusiones</a></span>
   </div>
 
 <div class="page-foot">
@@ -216,16 +216,16 @@
 </div>
 </div><!-- CONTENT ENDS HERE -->
   </main> <!-- end of id=main -->
-  <script src="/libs/vela/metisMenu.min.js"></script>
-  <script src="/libs/vela/slideout.min.js"></script>
+  <script src="/regional-spanish-models-talk-2022/libs/vela/metisMenu.min.js"></script>
+  <script src="/regional-spanish-models-talk-2022/libs/vela/slideout.min.js"></script>
   
-    <script src="/libs/katex/katex.min.js"></script>
-<script src="/libs/katex/auto-render.min.js"></script>
-<script>renderMathInElement(document.body)</script>
+    
+
+
 
   
   
-    <script src="/libs/highlight/highlight.pack.js"></script>
+    <script src="/regional-spanish-models-talk-2022/libs/highlight/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();hljs.configure({tabReplace: '    '});</script>
 
   
