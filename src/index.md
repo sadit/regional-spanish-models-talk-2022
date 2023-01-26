@@ -3,6 +3,8 @@
 
 # Variaciones del lenguaje español en redes sociales (Twitter)
 
+Enero 2023
+
 **Eric S. Téllez** -- CONACyT - CICESE - INFOTEC [email:eric.tellez@ieee.org]()
 
 
@@ -26,7 +28,7 @@ En esta charla se muestran esfuerzos para medir la similitud entre variaciones d
 
 ## Mas información
 - Sitio web: [https://ingeotec.github.io/regional-spanish-models/](https://ingeotec.github.io/regional-spanish-models/)
-- Repositorio: [https://github.com/sadit/RegionalSpanish](https://github.com/INGEOTEC/regional-spanish-models)
+- Repositorio: [https://github.com/INGEOTEC/regional-spanish-models](https://github.com/INGEOTEC/regional-spanish-models)
 - Regionalized models for Spanish language variations based on Twitter: [ArXiv](https://arxiv.org/abs/2110.06128).
 
 ```bibtex
