@@ -82,16 +82,13 @@
 </li>
 </ul>
 <h3 id="como_se_compara_bilma_con_los_word-embeddings"><a href="#como_se_compara_bilma_con_los_word-embeddings" class="header-anchor">Como se compara BILMA con los word-embeddings</a></h3>
-<div style="; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="fig-bilma-mlm.pdf" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
-<div style="text-align: center; width: 100%;"> Accuracy en la tarea MLM.</div>
-</div>
-<div style="; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="fig-bilma-cls.pdf" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
-<div style="text-align: center; width: 100%;"> Accuracy en predicción de Emoji-15.</div>
+<div style="; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="https://github.com/sadit/regional-spanish-models-talk-2022/raw/main/src/figs/fig-bilma-cls.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<div style="text-align: center; width: 100%;"> _Accuracy_ en predicción de Emoji-15 -- _tuneado_</div>
 </div>
 <div class="warn"><ul>
-<li><p>Se tuneo el modelo BILMA para predecir emoticones añadiendo dos capas lineales a los embeddings de inicio, por lo que se puede ver que se predice independiente de la posición. </p>
+<li><p>Se <em>tuneó</em> el modelo BILMA para predecir emoticones añadiendo dos capas lineales a los embeddings de inicio, por lo que se puede ver que se predice independiente de la posición. </p>
 </li>
-<li><p>Tuneo con 90&#37;-10&#37; del training set de la región hasta que el accuracy convergió.</p>
+<li><p>Tuneo con 90&#37;-10&#37; del training set de la región hasta que el <em>accuracy</em> convergió.</p>
 </li>
 <li><p>Se evaluó con test regional.</p>
 </li>
@@ -100,7 +97,13 @@
 <li><p>Los resultados en general son muy similares a los modelos de fastText, pero, los modelos BILMA pueden hacer más cosas...</p>
 </li>
 </ul></div>
-<h1 id="usando_bilma_para_completar_frases_mediante_máscaras"><a href="#usando_bilma_para_completar_frases_mediante_máscaras" class="header-anchor">Usando BILMA para completar frases &#40;mediante máscaras&#41;</a></h1>
+<h3 id="usando_bilma_para_completar_frases_mediante_máscaras"><a href="#usando_bilma_para_completar_frases_mediante_máscaras" class="header-anchor">Usando BILMA para completar frases &#40;mediante máscaras&#41;</a></h3>
+<div style="; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="https://github.com/sadit/regional-spanish-models-talk-2022/raw/main/src/figs/fig-bilma-mlm.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<div style="text-align: center; width: 100%;"> _Accuracy_ en la tarea MLM para el test</div>
+</div>
+<div style="; padding: 0.5em; margin: 0.5em; text-align: center;"><img src="https://github.com/sadit/regional-spanish-models-talk-2022/raw/main/src/figs/bilma-mlm-table.png" alt="" style="width: 100%; left-margin: 0; padding: 0;" />
+<div style="text-align: center; width: 100%;"> Completando frases -- minería de opinión</div>
+</div>
 
   <div style="width: 100%; background-color: rgb(229, 195, 182); border: solid rgb(36, 36, 37)  1px; padding: 0.5em; margin-top: 1em; text-align: center;">
     <span> <a href="/index.html">Introducción</a></span> -

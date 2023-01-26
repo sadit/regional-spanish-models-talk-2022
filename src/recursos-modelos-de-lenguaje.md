@@ -23,18 +23,18 @@ Los modelos de lenguaje, _Language Models (LM)_, son más sofisticados que los w
 
 ### Como se compara BILMA con los word-embeddings
 
-\img{}{fig-bilma-mlm.pdf}{Accuracy en la tarea MLM.}{}
-
-\img{}{fig-bilma-cls.pdf}{Accuracy en predicción de Emoji-15.}{}
+\img{}{https://github.com/sadit/regional-spanish-models-talk-2022/raw/main/src/figs/fig-bilma-cls.png}{_Accuracy_ en predicción de Emoji-15 -- _tuneado_}{}
 
 
 @@warn
-- Se tuneo el modelo BILMA para predecir emoticones añadiendo dos capas lineales a los embeddings de inicio, por lo que se puede ver que se predice independiente de la posición. 
-- Tuneo con 90%-10% del training set de la región hasta que el accuracy convergió.
+- Se _tuneó_ el modelo BILMA para predecir emoticones añadiendo dos capas lineales a los embeddings de inicio, por lo que se puede ver que se predice independiente de la posición. 
+- Tuneo con 90%-10% del training set de la región hasta que el _accuracy_ convergió.
 - Se evaluó con test regional.
 - Observe que es una matriz de modelos pre-entrenados y tuneos.
 - Los resultados en general son muy similares a los modelos de fastText, pero, los modelos BILMA pueden hacer más cosas...
 @@
 
+### Usando BILMA para completar frases (mediante máscaras)
+\img{}{https://github.com/sadit/regional-spanish-models-talk-2022/raw/main/src/figs/fig-bilma-mlm.png}{_Accuracy_ en la tarea MLM para el test}{}
 
-# Usando BILMA para completar frases (mediante máscaras)
+\img{}{https://github.com/sadit/regional-spanish-models-talk-2022/raw/main/src/figs/bilma-mlm-table.png}{Completando frases -- minería de opinión}{}
